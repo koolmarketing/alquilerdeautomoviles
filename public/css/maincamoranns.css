@@ -1,0 +1,207 @@
+.service-cms {
+  padding: 10px;
+  margin-bottom: 35px; }
+  .service-cms h3 {
+    padding-top: 10px;
+    margin-bottom: 13px;
+    color: #666666; }
+  .service-cms p {
+    text-align: center; }
+  .service-cms div > span.compartir {
+    text-align: center; }
+
+.link-inicio {
+  color: #ffffff;
+  text-decoration: none; }
+
+.header-pages {
+  height: 220px; }
+  .header-pages h1 {
+    text-align: center;
+    color: #ffffff;
+    font-family: sans-serif, "Open-Sans"; }
+
+.nosotros {
+  background: #666666;
+  background-image: url("../img/nosotros-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#titulo {
+  display: flex;
+  justify-content: center; }
+
+.title-center {
+  color: #ffffff;
+  text-align: ceneter;
+  align-content: center;
+  font-weight: 800;
+  text-shadow: 2px 3px 2px #555555; }
+
+.sub-title-nosotros {
+  font-family: sans-serif, "Open-Sans";
+  font-weight: 700;
+  padding-bottom: 15px; }
+
+.alquiler {
+  background: #666666;
+  background-image: url("../img/alquiler-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.header-blue {
+  background: #1595D4;
+  color: #ffffff;
+  padding: 5px 0px 5px 0px; }
+  .header-blue a {
+    color: #ffffff; }
+
+#nav.navbar-default, .navbar-static-top {
+  background: none;
+  border: none; }
+
+#nav.navbar {
+  margin-bottom: 0;
+  min-height: 75px; }
+
+#nav {
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); }
+
+#nav {
+  background-color: #fff; }
+
+.navbar-default {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7; }
+
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent; }
+
+.logo-banner {
+  padding: 30px 0px 10px 0px; }
+
+@media (min-width: 900px) {
+  .logo-home {
+    margin-left: 40%; }
+
+  .carousel-caption {
+    margin-top: 0px; } }
+@media (max-width: 600px) {
+  .logo-home {
+    margin-left: 0px; }
+
+  .carousel-caption {
+    margin-top: 60px; } }
+@media (max-width: 400px) {
+  .logo-home {
+    margin-right: 80px; }
+
+  .carousel-caption {
+    margin-top: 60px; } }
+#requisitos {
+  overflow-y: auto;
+  overflow-x: none;
+  max-height: 230px; }
+
+.aceptar_terminos {
+  font-size: 18px;
+  font-weight: bold; }
+
+.cam-jumbo {
+  background: #ffffff;
+  box-shadow: 2px 3px 3px #999999;
+  display: flex;
+  align-content: center; }
+  .cam-jumbo h2 {
+    color: #444444; }
+  .cam-jumbo i {
+    font-size: 55px;
+    align-content: center; }
+
+.title-cam-h3 {
+  font-family: "Helvetica", sans-serif,"Arial";
+  color: #777777; }
+
+.cam-form textarea::-webkit-input-placeholder, .cam-form input::-webkit-input-placeholder {
+  color: #555555 !important; }
+.cam-form textarea::-moz-input-placeholder, .cam-form input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #555555 !important; }
+.cam-form textarea::-moz-input-placeholder, .cam-form input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #555555 !important; }
+.cam-form textarea:-ms-input-placeholder, .cam-form input:-ms-input-placeholder {
+  color: #555555 !important; }
+
+.item-carro-contratar {
+  min-height: 100px;
+  padding: 0px;
+  border: 1px solid #dadada;
+  margin-bottom: 7px; }
+
+.item-carro-imagen {
+  padding: 10px; }
+
+.item-carro-list {
+  padding: 10px 10px 10px 0px; }
+
+.container-items-disponibles {
+  overflow-y: auto;
+  max-height: 500px; }
+
+body {
+  overflow-x: hidden; }
+
+.title-h1-cam {
+  font-family: Helvetica,Arial; }
+
+.list-sm-cam {
+  border-radius: 0px; }
+  .list-sm-cam li {
+    padding: 5px 10px; }
+
+.h3-grey-title {
+  color: #444444;
+  font-size: 25px;
+  font-family: 'Open Sans',Helvetica, arial; }
+
+.subtitle-cam {
+  font-size: 35px;
+  font-weight: 800px;
+  text-align: center; }
+
+.contact-item {
+  display: flex;
+  flex-direction: column; }
+  .contact-item span {
+    background: #1595D4;
+    color: #ffffff; }
+
+.list-pop {
+  text-align: left; }
+  .list-pop span {
+    text-align: right; }
+
+.h2-grey-title {
+  color: #444444;
+  font-size: 30px;
+  font-family: 'Open Sans',Helvetica, arial; }
+
+.titulos_valores {
+  color: #FFFFFF;
+  font-size: 25px;
+  font-family: 'Open Sans',Helvetica, arial;
+  background: #1595D4; }
+
+.titulos_banner {
+  color: #FFFFFF;
+  font-size: 38px;
+  font-family: 'Open Sans',Helvetica, arial;
+  text-shadow: 2px 2px 2px #555555; }
+
+/*# sourceMappingURL=maincamoranns.css.map */
