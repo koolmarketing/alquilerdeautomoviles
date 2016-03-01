@@ -52,28 +52,49 @@ class HomeController extends Controller
 
     }
 
-        public function VerCarro($id){
+    public function VerCarro($id){
 
-       
-            $carro = App\Carros::find($id);
 
-         return view('crud.carro')->with('carro',$carro);
+        $carro = App\Carros::find($id);
 
-            
+        return view('crud.carro')->with('carro',$carro);
 
-    }
 
-            public function EditarCarro($id){
-
-       
-            $carro = App\Carros::find($id);
-
-         return view('crud.editarcarro')->with('carro',$carro);            
 
     }
 
-    public function update(Request $request, $id){
-        {
+    public function EditarCarro($id){
+
+
+        $carro = App\Carros::find($id);
+
+        return view('crud.editarcarro')->with('carro',$carro);            
+
+    }
+
+        public function delete($id){
+     $carro = App\Carros::find($id);
+     
+     $carro->delete();
+     return redirect('listadecarros')->with('status', 'actualizado');
+ }
+
+    public function desactivar($id){
+     $carro = App\Carros::find($id);
+     $carro->activo = 0;
+     $carro->save();
+     return redirect('listadecarros')->with('status', 'actualizado');
+ }
+
+ public function activar($id){
+    $carro = App\Carros::find($id);
+    $carro->activo = 1;
+    $carro->save();
+    return redirect('listadecarros')->with('status', 'actualizado');
+}
+
+public function update(Request $request, $id){
+    {
         $carro = App\Carros::find($id);
         
 
@@ -160,5 +181,5 @@ class HomeController extends Controller
         return redirect('listadecarros')->with('status', 'guardado');
        //
     }
-    }
+}
 }

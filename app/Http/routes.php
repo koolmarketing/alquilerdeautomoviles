@@ -35,5 +35,12 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::put('/editarcarro/{id}', 'HomeController@update');
 
+    Route::get('/eliminarcarro/{id}', 'HomeController@delete');
+
+    Route::get('/desactivarcarro/{id}', 'HomeController@desactivar');
+
+    Route::get('/activarcarro/{id}', 'HomeController@activar');
+
+
 
 });

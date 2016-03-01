@@ -12,7 +12,7 @@
 			<br><br>
 <a href="#" type="button" class="btn btn-primary">Más Imagenes</a>
 <a href="{!! URL::to('editarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-success">Editar</a>
-<a type="button" class="btn btn-danger">Eliminar</a>
+<a href="{!! URL::to('eliminarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-danger">Eliminar</a>
 		</div>
 
 
@@ -47,7 +47,8 @@
 
 
 		<div class="col-md-3">
-			<a href='#' class='list-group-item'>Aire acondicionado<span class='pull-right'>
+			<a href='#' class='list-group-item'>Aire acondicionado
+			<span class='pull-right'>
 				@if ($carro->aire_aconcionado=="1")
 				<i class='icon-check'></i>
 				@else
@@ -108,7 +109,7 @@
 							<a href='#' class='list-group-item'>Permite Mascotas
 						<span class='pull-right'>
 						@if ($carro->mascotas=="1")
-							<i class='icon-check'></i>
+							<i class='icon-check text-success'></i>
 							@else
 							<i class='icon-thumbs-down-1'></i>
 							@endif

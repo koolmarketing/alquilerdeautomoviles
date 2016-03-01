@@ -39,12 +39,12 @@
 					</td>
 					<td>
 					@if ($carro->activo =="0")
-					{!! '<button type="button" class="btn btn-info btn-xs">Activar</button>' !!}
+					<a href="{!! URL::to('activarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-info btn-xs">Activar</a>
 					@else
-					{!! '<button type="button" class="btn btn-info btn-xs">Desactivar</button>' !!}
+					<a href="{!! URL::to('desactivarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-info btn-xs">Desactivar</a>
 					@endif
-					<button type="button" class="btn btn-success btn-xs icon-edit-1"></button>
-					<button type="button" class="btn btn-danger btn-xs icon-trash-4"></button>
+					<a href="{!! URL::to('editarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-success btn-xs icon-edit-1"></a>
+					<a href="{!! URL::to('eliminarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-danger btn-xs icon-trash-4"></button>
 						
 					</td>
 					

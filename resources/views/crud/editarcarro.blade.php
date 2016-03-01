@@ -416,7 +416,7 @@
                   <div class="form-group col-md-12">
                        
 
-                       {!! Form::submit('Editar Carro!',array('class' => 'btn btn-primary btn-md')) !!}	
+                       {!! Form::submit('Actualizar Registro!',array('class' => 'btn btn-primary btn-md')) !!}	
                      </div>
 
                            {!! Form::close() !!}
