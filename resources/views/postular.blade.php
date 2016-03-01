@@ -54,7 +54,7 @@ About Us
               <div class="col-md-7">	
                 <div class="form-group col-md-6">
                   <label for="exampleInputEmail1"><i class="icon-user-2"></i> Nombre Completo</label>
-                  <input type="text" class="form-control" name="propietario" id="exampleInputEmail1" placeholder="Email" required="requerid">
+                  <input type="text" class="form-control" name="propietario" id="exampleInputEmail1" placeholder="Nombre" required="requerid">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="exampleInputEmail1"><i class="icon-mail"></i> Email</label>

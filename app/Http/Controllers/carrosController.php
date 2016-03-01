@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App;
 use App\Carros;
 use Storage;
+use Mail;
+Use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use phpmailer;
@@ -64,10 +66,6 @@ class carrosController extends Controller
 			//Storage::disk('local')->put($nombre,  \File::get($file));
 		}
 
-
-
-
-
 		$carro->propietario   = $request->input('propietario');
 		$carro->email         = $request->input('email');
 		$carro->telefono_fijo = $request->input('telefono_fijo');
@@ -104,18 +102,12 @@ class carrosController extends Controller
 		$carro->usb_mp3            = $request->input('usb_mp3');
 		$carro->activo             = 0;
 
-
-
-
 		$carro->save();
 
 		return redirect('postular')->with('status', 'guardado');
-
-		
-
-
-
-        //
+       //
 	}
+
+
 
 }

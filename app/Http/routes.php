@@ -21,6 +21,19 @@ Route::get('contratarvehiculo/', function () {  return view('contratarvehiculo')
 
 
 
-Route::group(['middleware' => ['web']], function () {
-    //
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
+
+    Route::get('/listadecarros', 'HomeController@ListadoCarros');
+
+    Route::get('/vercarro/{id}', 'HomeController@VerCarro');
+
+    Route::get('/editarcarro/{id}', 'HomeController@EditarCarro');
+
+    Route::put('/editarcarro/{id}', 'HomeController@update');
+
+
 });
