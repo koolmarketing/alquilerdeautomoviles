@@ -4,7 +4,12 @@
 
 <div class="container">
 	<div class="col-md-12 ">
-		<h1>{!! $carro->marca !!} {!! $carro->linea !!} <small>{!! $carro->modelo !!}</small></h1><br><br>
+
+	<div class="alert alert-info">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		 <h1>{!! $carro->marca !!} {!! $carro->linea !!} <small> de <b>{!! $carro->propietario !!}</b></small></h1>
+	</div>
+		<br><br>
 
 
 		<div class="col-md-5">
