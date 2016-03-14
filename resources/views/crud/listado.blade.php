@@ -9,7 +9,7 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-				<th></th>
+					<th></th>
 					<th>Marca</th>
 					<th>Línea</th>
 
@@ -21,9 +21,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				
 
-					@foreach ($carros as $carro)
+				@foreach ($carros as $carro)
+				<tr>
 					<td><a href="{!! URL::to('vercarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-success btn-xs icon-search"></a></td>
 					<td>{!! $carro->marca !!}</td>
 					<td>{!! $carro->linea !!}</td>
@@ -31,34 +32,34 @@
 					<td> {!! $carro->email !!} </td>
 					<td> {!! $carro->celular !!} </td>
 					<td>
-					@if ($carro->activo =="0")
-					{!! "No Disponible" !!}
-					@else
-					{!! "Disponible" !!}
-					@endif
+						@if ($carro->activo =="0")
+						{!! "No Disponible" !!}
+						@else
+						{!! "Disponible" !!}
+						@endif
 					</td>
 					<td>
-					@if ($carro->activo =="0")
-					<a href="{!! URL::to('activarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-info btn-xs">Activar</a>
-					@else
-					<a href="{!! URL::to('desactivarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-info btn-xs">Desactivar</a>
-					@endif
-					<a href="{!! URL::to('editarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-success btn-xs icon-edit-1"></a>
-					<a href="{!! URL::to('eliminarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-danger btn-xs icon-trash-4"></button>
+						@if ($carro->activo =="0")
+						<a href="{!! URL::to('activarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-info btn-xs">Activar</a>
+						@else
+						<a href="{!! URL::to('desactivarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-info btn-xs">Desactivar</a>
+						@endif
+						<a href="{!! URL::to('editarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-success btn-xs icon-edit-1"></a>
+						<a href="{!! URL::to('eliminarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-danger btn-xs icon-trash-4"></button>
+							
+						</td>
 						
-					</td>
-					
-
+					</tr>
 					@endforeach
 					
-				</tr>
-			</tbody>
-		</table>
+					
+				</tbody>
+			</table>
 
 
 
-	</div>	
-</div>
+		</div>	
+	</div>
 
 
-@stop
+	@stop

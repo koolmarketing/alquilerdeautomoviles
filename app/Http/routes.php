@@ -15,9 +15,17 @@ Route::get('servicios_complementarios/', function () {  return view('alquiler');
 
 Route::get('carro/', function () {  return view('carro');  });
 
-Route::get('contacto/', function () {  return view('contacto');  });
+Route::get('contacto/', function () {  return view('contacto')->with('status', 'nuevo');  });
 
-Route::get('contratarvehiculo/', function () {  return view('contratarvehiculo');  });
+Route::get('contratarvehiculo/',function () {  return view('contratarvehiculo')->with('status', 'nuevo');  });
+
+Route::get('servicioscomplementarios/', function () {  return view('servicioscomplementarios');  });
+
+Route::post('contactopersona', ['uses' => 'carrosController@contactoPersona', 'as' => 'contaco_persona']);
+
+Route::post('cotizacionpersona', ['uses' => 'carrosController@cotizacionpersona', 'as' => 'cotizacionpersona']);
+
+Route::post('cotizacionempresa', ['uses' => 'carrosController@cotizacionempresa', 'as' => 'cotizacionempresa']);
 
 
 

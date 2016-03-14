@@ -41,7 +41,7 @@ Contacto
 
        		
 
-
+{!! Form::open(array('class'=>'contact-form','method' => 'post', 'url' => 'contactopersona')) !!}
 
        		<h3 class="text-center h3-grey-title">Servicio al Cliente</h3><br>
 
@@ -51,7 +51,7 @@ Contacto
        				<div class="col-md-6">
        					<div class="form-group">
        						<label for="name" class="sr-only">Nombre: </label>
-       						<input type="text" class="form-control" name="name" id="name" required="required" placeholder="SU NOMBRE">
+       						<input type="text" class="form-control" name="nombre" id="name" required="required" placeholder="SU NOMBRE">
        					</div>
        				</div>
 
@@ -65,29 +65,29 @@ Contacto
        				<div class="col-md-6">
        					<div class="form-group">
        						<label for="phoneno" class="sr-only">Teléfono: </label>
-       						<input type="text" class="form-control" name="phoneno" id="phoneno" required="required" placeholder="TELÉFONO">
+       						<input type="text" class="form-control" name="telefono" id="phoneno" required="required" placeholder="TELÉFONO">
        					</div>
        				</div>
 
        				<div class="col-md-6">
        					<div class="form-group">
        						<label for="subject" class="sr-only">Asunto: </label>
-       						<input type="text" class="form-control" name="subject" id="asunto" required="required" placeholder="ASUNTO">
+       						<input type="text" class="form-control" name="asunto" id="asunto" required="required" placeholder="ASUNTO">
        					</div>
        				</div>
 
        				<div class="col-xs-12">
        					<div class="form-group">
        						<label for="message" class="sr-only">Mensaje: </label>
-       						<textarea class="form-control" rows="3" name="message" id="message" required="required" placeholder="SU MENSAJE"></textarea>
+       						<textarea class="form-control" rows="3" name="mensaje" id="message" required="required" placeholder="SU MENSAJE"></textarea>
        					</div>
        				</div>
 
        				<div class="col-xs-12 text-center">
-       					<input type="submit" class="btn btn-lg  btn-primary text-uppercase" value="ENVIAR">
+       					{!! Form::submit('Enviar',array('class' => 'btn btn-lg btn-block btn-secondary text-uppercase')) !!}  
        				</div>
        			</div>
-       		</form>
+       		{!! Form::close() !!}
        		
        	</div>
 
@@ -124,3 +124,19 @@ Contacto
 
 
    @stop
+
+@section('add_scripts')
+
+   @if ($status=="enviado")
+<script>
+  // alert('Su carro ha sido registrado de manera exitosa, en este momento esta en revisión, nos comunicaremos con usted muy pronto');
+
+  swal({
+                  title: "Gracias !",
+                  text: "Su mensaje se ha enviado exitosamente",
+                  type: "success"
+                });
+</script>
+@endif
+
+@stop

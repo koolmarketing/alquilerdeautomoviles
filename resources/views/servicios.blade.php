@@ -71,22 +71,21 @@
        					</div> 
 
        					<div class="col-md-6">
-       						<h3>Gana dinero con tu automovil</h3>
-       						<p>
-       							Nuestra meta general es lograr que nuestros usuarios puedan generar ingresos extras ayudando y proveyendo a la su vez un servicio, así que anímate e inscribiste y nos contactaremos contigo.    </p>
-       							
-       							{!! link_to("postular","Postularme",array("class"=>"btn btn-info btn-sm")) !!}
-       						</div>
+       						<h3>Gane dinero con su automovil</h3>
+       						<p> Nuestra meta general es lograr que nuestros usuarios puedan generar ingresos extra ayudando y proporsionando, un servicio seguro y rentable, le animamos a inscribirse y nos contactaremos con usted.  </p>
 
-       					</div>
+                                                 {!! link_to("postular","Postularme",array("class"=>"btn btn-info btn-sm")) !!}
+                                          </div>
 
-       				</div>
+                                   </div>
 
-       				<br>
-       			</div>
-       		</div>
+                            </div>
 
-       	</section> <!-- *** end About Us *** -->
+                            <br>
+                     </div>
+              </div>
+
+       </section> <!-- *** end About Us *** -->
 
 
 
@@ -105,18 +104,18 @@
        					<p>
        						Contamos con varios complementos para hacer mucho más agradable su servicio.
        					</p>
-       					<button class="btn btn-info btn-sm">Ver más servicios</button>
-       				</div>
+                                      {!! link_to("servicioscomplementarios","Ver Más",array("class"=>"btn btn-info btn-sm")) !!} 
+                               </div>
 
-       				<div class="col-md-6">
-       					<img src="img/hombreypuertadecarro.jpg" alt="" class="img-responsive img-thumbnail">
-       				</div> 
-       			</div>
+                               <div class="col-md-6">
+                                     <img src="img/hombreypuertadecarro.jpg" alt="" class="img-responsive img-thumbnail">
+                              </div> 
+                       </div>
 
-       			<br>
-       		</div>
-       	</div>
-       </section>
+                       <br>
+                </div>
+         </div>
+  </section>
 
 
 
@@ -133,9 +132,9 @@
        				<p class="light-text" style="font-family:'Open Sans', sans-serif;">Si requiere más información</p>
        			</div>
        			<div class="col-lg-6 col-lg-offset-1 col-md-7 col-sm-8 button-container">
-       				<a href="#" class="button deep hvr-grow">Asesoría</a>
+       				<a href="{!! URL::to('nosotros') !!}" class="button deep hvr-grow">Nosotros</a>
        				<span class="margin-right-small margin-left-small">ó</span>
-       				<a href="#" class="button light hvr-grow">Enviar mensaje</a>
+       				<a href="{!! URL::to('contacto') !!}" class="button light hvr-grow">Enviar mensaje</a>
        			</div>
        		</div>
        	</div>

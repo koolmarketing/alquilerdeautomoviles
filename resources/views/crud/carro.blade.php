@@ -16,8 +16,15 @@
 			<img src="{!! URL::to ('uploads/img/')!!}/{!! $carro->foto_1 !!}" alt="" class="img-responsive">
 			<br><br>
 <a href="#" type="button" class="btn btn-primary">Más Imagenes</a>
-<a href="{!! URL::to('editarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-success">Editar</a>
-<a href="{!! URL::to('eliminarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-danger">Eliminar</a>
+<a href="{!! URL::to('editarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-warning">Editar</a>
+<a href="{!! URL::to('eliminarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-success">Eliminar</a>
+@if ($carro->activo =="0")
+						
+						<a href="{!! URL::to('activarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-danger">Activar Carro</a>
+						@else
+						<a href="{!! URL::to('desactivarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-danger">Desactivar Carro</a>
+						@endif
+						
 		</div>
 
 

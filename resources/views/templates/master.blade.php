@@ -133,8 +133,8 @@
             <div class="row">
               <div class="col-md-10 col-md-offset-1">           
                <ul class="social margin-bottom-medium-2">
-                <li class="facebook hvr-pulse"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="twitter hvr-pulse"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li class="facebook hvr-pulse"><a href="https://www.facebook.com/Alquiler-de-Automoviles-1540294692937774/" target="blank"><i class="fa fa-facebook"></i></a></li>
+                <li class="twitter hvr-pulse"><a href="https://twitter.com/AlquilerA" target="_blank"><i class="fa fa-twitter"></i></a></li>
                 <li class="g-plus hvr-pulse"><a href="#"><i class="fa fa-google-plus"></i></a></li>
                 <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
               </ul>
@@ -142,7 +142,7 @@
                 <img src="img/NR.png" width="300px">
               </p>
               
-              &copy; Copyright 2016 alquilerdeautomoviles.com.co- Todos los derechos reservados.
+              &copy; Copyright 2016 alquilerdeautomoviles.com.co- Todos los derechos reservados.- Desarrollado por <a href="http://koolmarketing.net" target="_blank">Koolmarketing</a>
             </p>
           </div>
         </div>
@@ -151,7 +151,7 @@
 
 
  
-    {!! HTML::script("js/jquery-1.12.1.min.js") !!}
+    {!! HTML::script("js/jquery.min.js") !!}
    
     {!! HTML::script("https://maps.googleapis.com/maps/api/js?key=AIzaSyBOsiOjjoOiFBmXLU0adNjsnCKLpcDfRyI") !!}
     

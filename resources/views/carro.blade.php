@@ -33,6 +33,8 @@ Carro
           <br><br>
          
           {!! link_to('contratarvehiculo/','Contratar',array('class'=>'btn btn-primary btn-lg')) !!}
+
+
         </div> 
 
         <div class="col-md-6">
@@ -40,8 +42,8 @@ Carro
             <li class="list-group-item">Modelo: <span class="pull-right">2013</span></li>            
             <li class="list-group-item">Capacidad: <span class="pull-right">5 pasajeros</span></li>
             <li class="list-group-item">Precio por día: <span class="pull-right">110.000</span></li>
-            <button class="btn btn-primary btn-md btn-block" id="more-info">Ver más Información</button>
-
+<!--             <button class="btn btn-primary btn-md btn-block" id="more-info"><h4 class="title-w">Ver más Información</h4></button>
+ -->
           </ul>
 
 
@@ -52,39 +54,30 @@ Carro
             <li class="list-group-item">Licencia de conducción vigente: <span class="pull-right">(nacional o extranjera)</span></li>
             <li class="list-group-item">Depósito: <span class="pull-right">1.600.000</span></li>
           </ul>
+
+          
+         <!--  <button class="btn btn-success btn-lg pull-right" id="btn-mostrar">Más Detalles</button>
+ -->
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+Más detalles
+</button>
+<div class="collapse" id="collapseExample">
+  
+  <br><br>
+       <div class='list-group list-pop col-md-7'><a href='#' class='list-group-item'><b>Marca:</b> <span class='pull-right'>Marca</span> </a><a href='#' class='list-group-item'><b>Linea:</b> <span class='pull-right'>Linea</span> </a><a href='#' class='list-group-item'><b>Modelo:</b><span class='pull-right'>Modelo</span></a><a href='#' class='list-group-item'><b>Color:</b><span class='pull-right'>Color</span></a> <a href='#' class='list-group-item'><b>Transmisión:</b><span class='pull-right'>Transmisión</span></a> <a href='#' class='list-group-item'><b>Combustible:</b><span class='pull-right'>Combustible</span></a><a href='#' class='list-group-item'><b>Pasajeros:</b><span class='pull-right'>Pasajeros</span></a> <a href='#' class='list-group-item'><b>Precio por día:</b><span class='pull-right'>Valor</span></a></div><div class='list-group list-pop col-md-5'> <a href='#' class='list-group-item'>Aire acondicionado<span class='pull-right'><i class='icon-check'></i></span></a>  <a href='#' class='list-group-item'>Frenos ABS<span class='pull-right'><i class='icon-check'></i></span></a>  <a href='#' class='list-group-item'>Cojinería de Cuero<span class='pull-right'><i class='icon-check'></i></span></a>  <a href='#' class='list-group-item'>Airbag Conductor<span class='pull-right'><i class='icon-check'></i></span></a>  <a href='#' class='list-group-item'>Airbag Copiloto<span class='pull-right'><i class='icon-check'></i></span></a>  <a href='#' class='list-group-item'>Permite mascotas<span class='pull-right'><i class='icon-check'></i></span></a>  <a href='#' class='list-group-item'>Entrega a domicilio<span class='pull-right'><i class='icon-check'></i></span></a>  <a href='#' class='list-group-item'>Radio<span class='pull-right'><i class='icon-check'></i></span></a>  <a href='#' class='list-group-item'>CD/MP3<span class='pull-right'><i class='icon-check'></i></span></a>  <a href='#' class='list-group-item'>USB/MP3<span class='pull-right'><i class='icon-check'></i></span></a></div>
+  
+</div>
         </div>
+
+
+
+
+
+
+
       </section>
 
-      <div class="col-md-6">
-
-    <!-- Marca 
-    Linea
-    Modelo
-    Color
-    Placa
-    Transmisión
-    Combustible
-    Pasajeros
-    Precio por día
-    Fotos.
-    Observaciones
-
-    aire acondicionado
-    Frenos ABS
-    Cojinería de Cuero
-    Permite mascotas
-    Entrega a domicilio
-    Radio
-    Airbag Conductor
-    Airbag Copiloto
-    CD/MP3
-    USB/MP3 -->
-
-
-
-
-
-  </div>
+     
 
 
   @stop
@@ -92,6 +85,13 @@ Carro
 
   @section('add_scripts')
   <script type="text/javascript">
+
+
+    $("#btn-mostrar").click(function(){
+        $("#delalles").toggle();
+    });
+
+
     $("#more-info").click(function(event) {
       swal({ 
       title:"<h3 class='h3-grey-title'>Información general</h3>", 

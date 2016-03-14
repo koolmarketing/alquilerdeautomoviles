@@ -5,6 +5,7 @@ Contacto
 @stop
 
 @section('add_styles')
+<link href='https://fonts.googleapis.com/css?family=Raleway:300italic' rel='stylesheet' type='text/css'>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 @stop
 
@@ -28,337 +29,366 @@ Contacto
 
        </section> <!-- *** end Header *** -->
 
-       <div class="container main-container">				
-
-
-
-       	<div class="row">
-
-
-
-
-
-       	</div>
-
-       	<div class="col-sm-6 col-xs-12">
-       		<div class="map"></div>
-       	</div>
-       	<br>
-
-       	<div class="col-sm-7  col-xs-12">
-
-       		<div>
-
-       			<!-- Nav tabs -->
-       			<ul class="nav nav-tabs" role="tablist">
-       				<li role="presentation" class="active persona_natural"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Persona Natural</a></li>
-       				<li role="presentation" class="empresas"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Empresas</a></li>		
-       			</ul>
-
-       			<!-- Tab panes -->
-       			<div class="tab-content">
-       				<div role="tabpanel" class="tab-pane active" id="home">
-       					<br>
-       					<form id="main-contact-form" class="contact-form cam-form" name="contact-form" method="post" action="http://sainathchillapuram.com/BS/mediplus/dental/html-fullwidth/sendemail.php" role="form">
-       						<div class="row">
-
-       							<div class="col-md-12">
-       								<div class="col-md-5 item-carro-imagen">
-       									{!! HTML::image('img/thum/sparkrojo.jpg','',array('class'=>'img-responsive img-thumbnail')) !!}
-       								</div>
-       								<div class="col-md-7 item-carro-list">
-       									<span>Seleccionado</span>
-       									<span class="col-sm-12">Chevrolet Spark GT 2014</span>
-       									<span class="col-sm-12 text-right">110.000 pesos/día</span>
-
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<div class="col-md-12"><h4 class="title-cam-h3">Fecha de Contratación</h4><br></div>   								
-       									
-       								</div>
-       								<div class="col-md-6">	
-       									<input type="text" class="form-control some_class" value="" id="date_timepicker_start" placeholder="INICIAL" />
-       								</div>
-       								<div class="col-md-6">	
-       									<input type="text" class="form-control some_class" value="" id="date_timepicker_end" placeholder="FINAL" />
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<label for="name" class="sr-only">Documento: </label>
-       									
-       									<select name="" id="input" class="form-control" required="required" placeholder="TIPO DE DOCUMENTO">
-       										<option value="">TIPO DE DOCUMENTO</option>
-       										<option value="">1</option>
-       										<option value="">1</option>
-       										<option value="">1</option>
-       									</select>
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<label for="name" class="sr-only">Número: </label>
-       									<input type="text" class="form-control" name="name" id="name" required="required" placeholder="NÚMERO DE DOCUMENTO">
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<label for="name" class="sr-only">Nombre: </label>
-       									<input type="text" class="form-control" name="name" id="name" required="required" placeholder="SU NOMBRE COMPLETO">
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<label for="email" class="sr-only">Email: </label>
-       									<input type="text" class="form-control" name="email" id="email" required="required" placeholder="EMAIL">
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<label for="phoneno" class="sr-only">Teléfono: </label>
-       									<input type="text" class="form-control" name="phoneno" id="phoneno" required="required" placeholder="TELÉFONO FIJO">
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<label for="subject" class="sr-only">Teléfono Movil: </label>
-       									<input type="text" class="form-control" name="subject" id="asunto" required="required" placeholder="TELÉFONO MOVIL">
-       								</div>
-       							</div>
-
-       							<div class="col-xs-12">
-       								<div class="form-group">
-       									<label for="message" class="sr-only">Mensaje: </label>
-       									<textarea class="form-control" rows="4" name="message" id="message" required="required" placeholder="INFORMACIÓN ADICIONAL"></textarea>
-       								</div>
-       							</div>
-
-       							<div class="col-md-12">
-       								<div class="form-group">
-       									<div class="g-recaptcha" data-sitekey="6Lc6MxkTAAAAAJGKu4W561DFO8pk6amhSyBcqG85"></div>
-       								</div>
-       							</div>
-
-       							<div class="col-xs-12">
-       								<input type="submit" class="btn btn-lg btn-block btn-primary text-uppercase" value="SOLICITAR SERVICIO DE ALQUILER">
-       							</div>
-       						</div>
-       					</form>
-       				</div>
-       				<div role="tabpanel" class="tab-pane" id="profile">
-       					<br>
-       					<form id="main-contact-form" class="contact-form cam-form" name="contact-form" method="post" action="http://sainathchillapuram.com/BS/mediplus/dental/html-fullwidth/sendemail.php" role="form">
-       						<div class="row">
-
-       							<div class="col-md-12">
-       								<div class="col-md-5 item-carro-imagen">
-       									{!! HTML::image('img/thum/sparkrojo.jpg','',array('class'=>'img-responsive img-thumbnail')) !!}
-       								</div>
-       								<div class="col-md-7 item-carro-list">
-       									<span>Seleccionado</span>
-       									<span class="col-sm-12">Chevrolet Spark GT 2014</span>
-       									<span class="col-sm-12 text-right">110.000 pesos/día</span>
-
-       								</div>
-       							</div>
-
-       							<div class="col-md-12">
-       								<div class="form-group">
-       									<label for="name" class="sr-only">NOMBRE DE LA EMPRESA: </label>
-       									<input type="text" class="form-control" name="name" id="name" required="required" placeholder="NOMBRE DE LA EMPRESA">
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<div class="col-md-12"><h4 class="title-cam-h3">Fecha de Contratación</h4><br></div>   								
-       									
-       								</div>
-       								<div class="col-md-6">	
-       									<input type="text" class="form-control some_class" value="" id="date_timepicker_start1" placeholder="INICIAL" />
-       								</div>
-       								<div class="col-md-6">	
-       									<input type="text" class="form-control some_class" value="" id="date_timepicker_end1" placeholder="FINAL" />
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<label for="name" class="sr-only">NIT: </label>
-       									<input type="text" class="form-control" name="name" id="name" required="required" placeholder="NIT">
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<label for="name" class="sr-only">NIT: </label>
-       									<input type="text" class="form-control" name="name" id="name" required="required" placeholder="NOMBRE DEL CONTACTO">
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<label for="email" class="sr-only">Email: </label>
-       									<input type="text" class="form-control" name="email" id="email" required="required" placeholder="EMAIL">
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<label for="phoneno" class="sr-only">Teléfono: </label>
-       									<input type="text" class="form-control" name="phoneno" id="phoneno" required="required" placeholder="TELÉFONO">
-       								</div>
-       							</div>
-
-       							<div class="col-md-6">
-       								<div class="form-group">
-       									<label for="subject" class="sr-only">Asunto: </label>
-       									<input type="text" class="form-control" name="subject" id="asunto" required="required" placeholder="TELÉFONO MOVIL">
-       								</div>
-       							</div>
-
-       							<div class="col-xs-12">
-       								<div class="form-group">
-       									<label for="message" class="sr-only">Mensaje: </label>
-       									<textarea class="form-control" rows="4" name="message" id="message" required="required" placeholder="MENSAJE"></textarea>
-       								</div>
-       							</div>
-
-
-
-
-       							<div class="col-xs-12">
-       								<input type="submit" class="btn btn-lg btn-block btn-primary text-uppercase" value="SOLICITAR SERVICIO DE ALQUILER">
-       							</div>
-       						</div>
-       					</form>
-       				</div>
-
-       			</div>
-
-       		</div>
-
-
-       	</div>
-
-
-
-       	<div class="col-md-5 container-items-disponibles">	
-
-       		Vehiculos disponibles
-
-       		<div class="col-md-12 item-carro-contratar">
-       			<div class="col-md-5 item-carro-imagen">
-       				{!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
-       			</div>
-       			<div class="col-md-7 item-carro-list">
-
-       				<span class="col-sm-12">Marca Linea Modelo</span>
-       				<span class="col-sm-12 text-right">110.000</span>
-       				<button class="btn btn-xs btn-primary">Seleccionar</button>
-       			</div>
-
-       		</div>
-
-
-       		<div class="col-md-12 item-carro-contratar">
-       			<div class="col-md-5 item-carro-imagen">
-       				{!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
-       			</div>
-       			<div class="col-md-7 item-carro-list">
-
-       				<span class="col-sm-12">Marca Linea Modelo</span>
-       				<span class="col-sm-12 text-right">110.000</span>
-       				<button class="btn btn-xs btn-primary">Seleccionar</button>
-       			</div>
-
-       		</div>
-
-
-
-
-       		<div class="col-md-12 item-carro-contratar">
-       			<div class="col-md-5 item-carro-imagen">
-       				{!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
-       			</div>
-       			<div class="col-md-7 item-carro-list">
-
-       				<span class="col-sm-12">Marca Linea Modelo</span>
-       				<span class="col-sm-12 text-right">110.000</span>
-       				<button class="btn btn-xs btn-primary">Seleccionar</button>
-       			</div>
-
-       		</div>
-
-
-
-       		<div class="col-md-12 item-carro-contratar">
-       			<div class="col-md-5 item-carro-imagen">
-       				{!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
-       			</div>
-       			<div class="col-md-7 item-carro-list">
-
-       				<span class="col-sm-12">Marca Linea Modelo</span>
-       				<span class="col-sm-12 text-right">110.000</span>
-       				<button class="btn btn-xs btn-primary">Seleccionar</button>
-       			</div>
-
-       		</div>
-
-       		       		<div class="col-md-12 item-carro-contratar">
-       			<div class="col-md-5 item-carro-imagen">
-       				{!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
-       			</div>
-       			<div class="col-md-7 item-carro-list">
-
-       				<span class="col-sm-12">Marca Linea Modelo</span>
-       				<span class="col-sm-12 text-right">110.000</span>
-       				<button class="btn btn-xs btn-primary">Seleccionar</button>
-       			</div>
-
-       		</div>
-
-       		       		<div class="col-md-12 item-carro-contratar">
-       			<div class="col-md-5 item-carro-imagen">
-       				{!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
-       			</div>
-       			<div class="col-md-7 item-carro-list">
-
-       				<span class="col-sm-12">Marca Linea Modelo</span>
-       				<span class="col-sm-12 text-right">110.000</span>
-       				<button class="btn btn-xs btn-primary">Seleccionar</button>
-       			</div>
-
-       		</div>
-
-
-
-       	</div>
-
-
+       <div class="container">				
+
+        <br><br>
+        <div class="col-md-7  col-xs-12">
+
+         <div>
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+           <li role="presentation" class="active persona_natural"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class=" icon-adult"></i> Persona Natural</a></li>
+           <li role="presentation" class="empresas"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="icon-commerical-building"></i> Empresas</a></li>		
+         </ul>
+
+         <!-- Tab panes -->
+         <div class="tab-content">
+           <div role="tabpanel" class="tab-pane active" id="home">
+            <br>
+            {!! Form::open(array('class'=>'contact-form','method' => 'post', 'url' => 'cotizacionpersona')) !!}
+            <div class="row">
+
+              <div class="col-md-12">
+               <div class="col-md-5 item-carro-imagen">
+                {!! HTML::image('img/thum/sparkrojo.jpg','',array('class'=>'img-responsive img-thumbnail')) !!}
+              </div>
+              <div class="col-md-7 item-carro-list">
+
+
+                <h4 class="title-alquiler-h3">Chevrolet Spark GT 2014</h4>
+                <span class="label label-primary">Seleccionado</span><br><br>
+                <h5 class="title-alquiler-h5"><b>110.000</b> pesos/día</h5>
+
+              </div>
+            </div>
+
+            <div class="col-md-6">
+             <div class="form-group">
+              <div class="col-md-12"><h4 class="title-alquiler-h5"><i class="icon-calendar-empty"></i> Fecha de Contratación</h4><br></div>   								
+
+            </div>
+            <div class="col-md-6">	
+              <input type="text" class="form-control some_class" name="inicial" value="" id="date_timepicker_start" placeholder="INICIAL" />
+            </div><br>
+            <div class="col-md-6">	
+              <input type="text" name="final" class="form-control some_class" value="" id="date_timepicker_end" placeholder="FINAL" />
+            </div>
+          </div>
+
+          <br>
+
+          <div class="col-md-6">
+           <div class="form-group">
+            <label for="name" class="sr-only">Documento: </label>
+
+            <select name="documento" id="input" class="form-control" required="required" placeholder="TIPO DE DOCUMENTO">
+            <option value="">Seleccione tipo de documento</option>
+             <option value="Cédula">Cedúla</option>
+             <option value="Pasaporte">Pasaporte</option>
+             <option value="Pasaporte">Cedúla de Extrangería</option>
+
+           </select>
+         </div>
        </div>
 
+       <div class="col-md-6">
+         <div class="form-group">
+          <label for="name" class="sr-only">Número: </label>
+          <input type="text" class="form-control" name="numero_documento" id="name" required="required" placeholder="NÚMERO DE DOCUMENTO">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+       <div class="form-group">
+        <label for="name" class="sr-only">Nombre: </label>
+        <input type="text" class="form-control" name="nombre" id="name" required="required" placeholder="SU NOMBRE COMPLETO">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+     <div class="form-group">
+      <label for="email" class="sr-only">Email: </label>
+      <input type="text" class="form-control" name="email" id="email" required="required" placeholder="EMAIL">
+    </div>
+  </div>
+
+  <div class="col-md-6">
+   <div class="form-group">
+    <label for="phoneno" class="sr-only">Teléfono: </label>
+    <input type="text" class="form-control" name="telefono" id="phoneno" required="required" placeholder="TELÉFONO FIJO">
+  </div>
+</div>
+
+<div class="col-md-6">
+ <div class="form-group">
+  <label for="subject" class="sr-only">Teléfono Movil: </label>
+  <input type="text" class="form-control" name="celular" id="asunto" required="required" placeholder="TELÉFONO MOVIL">
+</div>
+</div>
+
+<div class="col-xs-12">
+ <div class="form-group">
+  <label for="message" class="sr-only">Mensaje: </label>
+  <textarea class="form-control" rows="4" name="mensaje" id="message" required="required" placeholder="INFORMACIÓN ADICIONAL"></textarea>
+</div>
+</div>
+
+<div class="col-xs-12">
+
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    
+    <ol><strong>Requisitos para el Alquiler:</strong>
+     <li>1. Tarjeta de crédito cupo mínimo $ 1.600.000</li>
+     <li>2. Pasaporte o cédula</li>
+     <li>3. Licencia de conducción (si es internacional es válida en Colombia)</li>
+     <li>4. Edad mínima 23 años</li>
+
+   </ol>
+ </div>
+
+</div>
 
 
 
-       @stop
+<div class="col-xs-12">
+  {!! Form::submit('SOLICITAR SERVICIO DE ALQUILER',array('class' => 'btn btn-lg btn-block btn-primary text-uppercase')) !!} 
 
-       @section('add_scripts')
+</div>
+</div>
+{!! Form::close() !!}
+</div>
+<div role="tabpanel" class="tab-pane" id="profile">
+  <br>
+  {!! Form::open(array('class'=>'contact-form','method' => 'post', 'url' => 'cotizacionempresa')) !!}
+  <div class="row">
 
-       <script type="text/javascript" src="js/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
-       <script>
-       	$(document).ready(function() {
-       		jQuery(function(){
-       			jQuery('#date_timepicker_start').datetimepicker({
+    <div class="col-md-12">
+     <div class="col-md-5 item-carro-imagen">
+      {!! HTML::image('img/thum/sparkrojo.jpg','',array('class'=>'img-responsive img-thumbnail')) !!}
+    </div>
+    <div class="col-md-7 item-carro-list">
+
+
+      <h4 class="title-alquiler-h3">Chevrolet Spark GT 2014</h4>
+      <span class="label label-primary">Seleccionado</span><br><br>
+      <h5 class="title-alquiler-h5"><b>110.000</b> pesos/día</h5>
+
+    </div>
+  </div>
+
+  <div class="col-md-12">
+   <div class="form-group">
+    <label for="name" class="sr-only">NOMBRE DE LA EMPRESA: </label>
+    <input type="text" class="form-control" name="empresa" id="name" required="required" placeholder="NOMBRE DE LA EMPRESA">
+  </div>
+</div>
+
+<div class="col-md-6">
+ <div class="form-group">
+   <div class="col-md-12"><h4 class="title-alquiler-h5"><i class="icon-calendar-empty"></i> Fecha de Contratación</h4><br></div>     								
+
+ </div>
+ <div class="col-md-6">	
+  <input type="text" class="form-control some_class" name="inicial" value="" id="date_timepicker_start1" placeholder="INICIAL" />
+</div><br>
+<div class="col-md-6">	
+  <input type="text" class="form-control some_class" name="final" value="" id="date_timepicker_end1" placeholder="FINAL" />
+</div>
+</div>
+
+<br>
+
+<div class="col-md-6">
+ <div class="form-group">
+  <label for="name" class="sr-only">NIT: </label>
+  <input type="text" name="nit" class="form-control" id="name" required="required" placeholder="NIT">
+</div>
+</div>
+
+<div class="col-md-6">
+ <div class="form-group">
+  <label for="name" class="sr-only">CONTACTO: </label>
+  <input type="text" class="form-control" name="contacto" id="name" required="required" placeholder="NOMBRE DEL CONTACTO">
+</div>
+</div>
+
+<div class="col-md-6">
+ <div class="form-group">
+  <label for="email" class="sr-only">Email: </label>
+  <input type="text" class="form-control" name="email" id="email" required="required" placeholder="EMAIL">
+</div>
+</div>
+
+<div class="col-md-6">
+ <div class="form-group">
+  <label for="phoneno" class="sr-only">Teléfono: </label>
+  <input type="text" class="form-control" name="telefono" id="phoneno" required="required" placeholder="TELÉFONO">
+</div>
+</div>
+
+<div class="col-md-6">
+ <div class="form-group">
+  <label for="subject" class="sr-only">CELULAR: </label>
+  <input type="text" class="form-control" name="celular" id="asunto" required="required" placeholder="TELÉFONO MOVIL">
+</div>
+</div>
+
+<div class="col-xs-12">
+ <div class="form-group">
+  <label for="message" class="sr-only">MENSAJE: </label>
+  <textarea class="form-control" rows="4" name="mensaje" id="message" required="required" placeholder="MENSAJE"></textarea>
+</div>
+</div>
+
+
+<div class="col-xs-12">
+
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    
+    <ol><strong>Requisitos para el Alquiler:</strong>
+     <li>1. Certificado Cámara de comercio con vigencia mínima 15 días</li>
+     <li>2. Carta de intención firmada por el representante legal de la empresa</li>
+     <li>3. Referencia Comercial y Bancaria</li>
+     <li>4. Transferencia Bancaria o efectivo, al momento de retirar el vehículo.</li>
+     <li>5. Tarjeta de crédito cupo mínimo 1.600.000.</li>
+
+   </ol>
+ </div>
+
+</div>
+
+
+
+
+<div class="col-xs-12">
+  {!! Form::submit('SOLICITAR SERVICIO DE ALQUILER',array('class' => 'btn btn-lg btn-block btn-primary text-uppercase')) !!} 
+
+</div>
+</div>
+{!! Form::close() !!}
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="col-md-4 col-sm-12 otros_autos hidden-sm hidden-xs" >    
+
+  <h3 class="title-alquiler-h3 text-right"><i class="icon-cab"></i> Carros Disponibles</h3><br>
+  <div class="container-items-disponibles">
+
+    <div class="col-md-12 item-carro-contratar">
+      <div class="col-md-5 item-carro-imagen">
+        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
+      </div>
+      <div class="col-md-7 item-carro-list">
+
+        <span class="col-sm-12">Marca Linea Modelo</span>
+        <span class="col-sm-12 text-right">110.000</span>
+        <button class="btn btn-xs btn-primary">Seleccionar</button>
+      </div>
+
+    </div>
+
+
+    <div class="col-md-12 item-carro-contratar">
+      <div class="col-md-5 item-carro-imagen">
+        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
+      </div>
+      <div class="col-md-7 item-carro-list">
+
+        <span class="col-sm-12">Marca Linea Modelo</span>
+        <span class="col-sm-12 text-right">110.000</span>
+        <button class="btn btn-xs btn-primary">Seleccionar</button>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="col-md-12 item-carro-contratar">
+      <div class="col-md-5 item-carro-imagen">
+        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
+      </div>
+      <div class="col-md-7 item-carro-list">
+
+        <span class="col-sm-12">Marca Linea Modelo</span>
+        <span class="col-sm-12 text-right">110.000</span>
+        <button class="btn btn-xs btn-primary">Seleccionar</button>
+      </div>
+
+    </div>
+
+
+
+    <div class="col-md-12 item-carro-contratar">
+      <div class="col-md-5 item-carro-imagen">
+        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
+      </div>
+      <div class="col-md-7 item-carro-list">
+
+        <span class="col-sm-12">Marca Linea Modelo</span>
+        <span class="col-sm-12 text-right">110.000</span>
+        <button class="btn btn-xs btn-primary">Seleccionar</button>
+      </div>
+
+    </div>
+
+    <div class="col-md-12 item-carro-contratar">
+      <div class="col-md-5 item-carro-imagen">
+        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
+      </div>
+      <div class="col-md-7 item-carro-list">
+
+        <span class="col-sm-12">Marca Linea Modelo</span>
+        <span class="col-sm-12 text-right">110.000</span>
+        <button class="btn btn-xs btn-primary">Seleccionar</button>
+      </div>
+
+    </div>
+
+    <div class="col-md-12 item-carro-contratar">
+      <div class="col-md-5 item-carro-imagen">
+        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
+      </div>
+      <div class="col-md-7 item-carro-list">
+
+        <span class="col-sm-12">Marca Linea Modelo</span>
+        <span class="col-sm-12 text-right">110.000</span>
+        <button class="btn btn-xs btn-primary">Seleccionar</button>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+
+@stop
+
+@section('add_scripts')
+
+<script type="text/javascript" src="js/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
+<script>
+  $(document).ready(function() {
+   jQuery(function(){
+    jQuery('#date_timepicker_start').datetimepicker({
   //format:'Y/m/d',
   onShow:function( ct ){
   	this.setOptions({
@@ -367,7 +397,7 @@ Contacto
   },
   timepicker:true
 });
-       			jQuery('#date_timepicker_end').datetimepicker({
+    jQuery('#date_timepicker_end').datetimepicker({
   //format:'Y/m/d',
   onShow:function( ct ){
   	this.setOptions({
@@ -376,14 +406,14 @@ Contacto
   },
   timepicker:true
 });
-       		});
-       	});
-       </script>
+  });
+ });
+</script>
 
-       <script>
-       	$(document).ready(function() {
-       		jQuery(function(){
-       			jQuery('#date_timepicker_start1').datetimepicker({
+<script>
+  $(document).ready(function() {
+   jQuery(function(){
+    jQuery('#date_timepicker_start1').datetimepicker({
   //format:'Y/m/d',
   onShow:function( ct ){
   	this.setOptions({
@@ -392,7 +422,7 @@ Contacto
   },
   timepicker:true
 });
-       			jQuery('#date_timepicker_end1').datetimepicker({
+    jQuery('#date_timepicker_end1').datetimepicker({
   //format:'Y/m/d',
   onShow:function( ct ){
   	this.setOptions({
@@ -401,23 +431,36 @@ Contacto
   },
   timepicker:true
 });
-       		});
-       	});
-       </script>
+  });
+ });
+</script>
 
-       <script type="text/javascript">
-       	
-       	$(".persona_natural").click(function(event) {
-       		
-       		swal({   title: "<h1>Persona Natural!</h1>",   text: "<b>Si quieres alquilar un vehículo de manera personal y no por medio de una empresa debes llenar este formulario.</b>",   html: true });
-       	});
+<script type="text/javascript">
 
-       	$(".empresas").click(function(event) {
-       		
-       		swal({   title: "<h1>Empresas!</h1>",   text: "<b>Si vas a realizar un alquiler por medio de una compañía debes llenar este formulario y tener la información para  los campos adicionales que te solicitamos.</b>",   html: true });
-       	});
+  $(".persona_natural").click(function(event) {
 
-       </script>
+   swal({   title: "<h1>Persona Natural!</h1>",   text: "<b>Si quieres alquilar un vehículo de manera personal y no por medio de una empresa debes llenar este formulario.</b>",   html: true });
+ });
+
+  $(".empresas").click(function(event) {
+
+   swal({   title: "<h1>Empresas!</h1>",   text: "<b>Si vas a realizar un alquiler por medio de una compañía debes llenar este formulario y tener la información para  los campos adicionales que te solicitamos.</b>",   html: true });
+ });
+
+</script>
 
 
-       @stop
+@if ($status=="enviado")
+<script>
+  // alert('Su carro ha sido registrado de manera exitosa, en este momento esta en revisión, nos comunicaremos con usted muy pronto');
+
+  swal({
+    title: "Gracias !",
+    text: "Estamos revisando su requerimiento, en pocos minutos nos comunicaremos con usted",
+    type: "success"
+  });
+</script>
+@endif
+
+
+@stop

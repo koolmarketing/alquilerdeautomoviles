@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App;
+use DB;
 use App\Carros;
 use Storage;
 use Mail;
@@ -39,7 +40,7 @@ class carrosController extends Controller
 			$extension = $file->getClientOriginalExtension();
 			$filename1 = "".str_random(12).".".$extension."";
 			$upload_success = $file->move($destinationPath, $filename1);			
-			//Storage::disk('local')->put($nombre,  \File::get($file));
+			
 		}
 
 		if ($request->hasFile('foto_2')) {
@@ -50,8 +51,7 @@ class carrosController extends Controller
 			$filename2 = "".str_random(12).".".$extension."";
 			$upload_success = $file->move($destinationPath, $filename2);
 
-			//return $filename;
-			//Storage::disk('local')->put($nombre,  \File::get($file));
+			
 		}
 
 		if ($request->hasFile('foto_3')) {
@@ -62,8 +62,7 @@ class carrosController extends Controller
 			$filename3 = "".str_random(12).".".$extension."";
 			$upload_success = $file->move($destinationPath, $filename3);
 
-			//return $filename;
-			//Storage::disk('local')->put($nombre,  \File::get($file));
+	
 		}
 
 		$carro->propietario   = $request->input('propietario');
@@ -100,14 +99,155 @@ class carrosController extends Controller
 		$carro->radio              = $request->input('radio');
 		$carro->cd_mp3             = $request->input('cd_mp3');
 		$carro->usb_mp3            = $request->input('usb_mp3');
+
+
+		//New
+
+		$carro->vidrios_electricos   = $request->input('vidrios_electricos');
+		$carro->rastreador    = $request->input('rastreador');
+		$carro->rines_lujo              = $request->input('rines_lujo');
+		$carro->full_equipo             = $request->input('full_equipo');
+		$carro->dvd            = $request->input('dvd');
+
+		//
+
+
 		$carro->activo             = 0;
 
 		$carro->save();
 
-		return redirect('postular')->with('status', 'guardado');
+		$carro = DB::table('carros')->where('placa', $carro->placa )->first();
+		$id=$carro->id;
+
+
+		$para      = 'multiserviciosenlinea2016@gmail.com';
+		$titulo    = 'Postulación de vehículo';
+		$mensaje   = '<p>Una persona ha postulado su vehículo</p>
+
+		<p><b>Propietario: </b>                '. $request->input("propietario") .'</p>	  
+		<p><b>Email:</b>                       '. $request->input("email") .' </p>
+		<p><b>Teléfono Fijo:</b>               '. $request->input("telefono_fijo") .'</p>
+		<p><b>Celular:</b>                     '. $request->input("celular") .'</p>	  
+		<p><b>Marca: </b>                      '. $request->input("marca") .' </p>
+		<p><b>Línea:  </b>                     '. $request->input("linea") .'</p>
+		<p><b>Modelo:</b>                      '. $request->input("modelo") .'</p> 
+		<p><h3><a type="buttom" style="pading:10px" href="http://alquilerdeautomoviles.com.co/vercarro/'.$id.'">Click aquí para ver detalles</a></h3></p>
+		<p>
+<img width="500px" src="http://alquilerdeautomoviles.com.co/uploads/img/'.$filename1.'" alt="" class="img-responsive">
+		</p>
+
+		<p></p>
+		'	;
+
+
+		$cabeceras = 'From: admin@alquilerdeautomoviles.com.co' . "\r\n" .
+		'Reply-To: admin@alquilerdeautomoviles.com.co' . "\r\n" .
+		"Content-type: text/html; charset=UTF-8" . "\r\n".
+		'X-Mailer: PHP/' . phpversion();
+
+		mail($para, $titulo, $mensaje, $cabeceras);
+
+		return view('postular',['status'=>'guardado']);
        //
+
+	}
+
+	public function contactoPersona(Request $datos){
+
+		$asunto        =  $datos->input('asunto');
+		$data   = $datos->input();
+		$asunto = $datos->input('asunto');
+
+
+		$para      = 'multiserviciosenlinea2016@gmail.com';
+		$titulo    = 'Servicio al Cliente: '.$asunto;
+		$mensaje   = '<p>Una persona ha enviado estos datos:</p>
+
+
+
+		<p>Nombre:                 '. $datos->input("nombre") .'</p>	  
+		<p>Email:                  '. $datos->input("email") .' </p>
+		<p>Teléfono:               '. $datos->input("telefono") .'</p>
+		<p>Mensaje:                '. $datos->input("mensaje") .'</p>'	;
+
+
+		$cabeceras = 'From: admin@alquilerdeautomoviles.com.co' . "\r\n" .
+		'Reply-To: admin@alquilerdeautomoviles.com.co' . "\r\n" .
+		"Content-type: text/html; charset=UTF-8" . "\r\n".
+		'X-Mailer: PHP/' . phpversion();
+
+		mail($para, $titulo, $mensaje, $cabeceras);
+		return view('contacto',['status'=>'enviado']);
+
 	}
 
 
+	public function cotizacionpersona(Request $datos){
+
+		$asunto =  $datos->input('asunto');
+		$data   = $datos->input();
+		$asunto = $datos->input('asunto');
+
+
+		$para      = 'multiserviciosenlinea2016@gmail.com';
+		$titulo    = 'Cotización de Alquiler';
+		$mensaje   = '<p>Una persona ha enviado estos datos:</p>
+
+		<p>Vehículo: Nombre del vehículo</p>
+		<p>Fecha Inicial:          '.$datos->input("inicial").'</p>
+		<p>Fecha Final:          '.$datos->input("final").'</p>
+		<p>Nombre:                 '. $datos->input("nombre") .'</p>
+		<p>Documento:               '. $datos->input("documento") .'</p>
+		<p>Número:               '. $datos->input("numero_documento") .'</p>	  
+		<p>Email:                  '. $datos->input("email") .' </p>
+		<p>Teléfono:               '. $datos->input("telefono") .'</p>
+		<p>Celular:               '. $datos->input("celular") .'</p>
+		<p>Mensaje:                '. $datos->input("mensaje") .'</p>'	;
+
+
+		$cabeceras = 'From: admin@alquilerdeautomoviles.com.co' . "\r\n" .
+		'Reply-To: admin@alquilerdeautomoviles.com.co' . "\r\n" .
+		"Content-type: text/html; charset=UTF-8" . "\r\n".
+		'X-Mailer: PHP/' . phpversion();
+
+		mail($para, $titulo, $mensaje, $cabeceras);
+		return view('contratarvehiculo',['status'=>'enviado']);
+
+	}
+
+
+		public function cotizacionempresa(Request $datos){
+
+		
+		$data   = $datos->input();
+		
+
+
+		$para      = 'multiserviciosenlinea2016@gmail.com';
+		$titulo    = 'Cotización de Alquiler';
+		$mensaje   = '<p>Una empresa ha enviado estos datos:</p>
+
+		<p>Vehículo: Nombre del vehículo</p>
+		<p>Fecha Inicial:           '.$datos->input("inicial").'</p>
+		<p>Fecha Final:             '.$datos->input("final").'</p><br>
+		<p>Empresa:                 '. $datos->input("empresa") .'</p>
+		<p>NIT:                     '. $datos->input("nit") .'</p>
+		<p>Nombre de contacto:      '. $datos->input("contacto") .'</p>
+		  
+		<p>Email:                   '. $datos->input("email") .' </p>
+		<p>Teléfono:                '. $datos->input("telefono") .'</p>
+		<p>Celular:                 '. $datos->input("celular") .'</p>
+		<p>Mensaje:                 '. $datos->input("mensaje") .'</p>'	;
+
+
+		$cabeceras = 'From: admin@alquilerdeautomoviles.com.co' . "\r\n" .
+		'Reply-To: admin@alquilerdeautomoviles.com.co' . "\r\n" .
+		"Content-type: text/html; charset=UTF-8" . "\r\n".
+		'X-Mailer: PHP/' . phpversion();
+
+		mail($para, $titulo, $mensaje, $cabeceras);
+		return view('contratarvehiculo',['status'=>'enviado']);
+
+	}
 
 }
