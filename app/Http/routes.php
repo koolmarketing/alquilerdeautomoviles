@@ -1,7 +1,7 @@
 <?php
 
 
-Route::get('/', function () {  return view('home');  });
+Route::get('/', function () {  return view('home')->with('status', 'nuevo');  });
 Route::get('nosotros/', function () {  return view('nosotros');  });
 Route::get('servicios/', function () {  return view('servicios');  });
 Route::get('alquiler','carrosController@alquiler');

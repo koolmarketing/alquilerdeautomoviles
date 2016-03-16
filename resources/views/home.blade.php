@@ -333,3 +333,16 @@
     </section> 
 
     @stop
+
+    @section('add_scripts')
+    @if ($status=="enviado")
+<script>
+  // alert('Su carro ha sido registrado de manera exitosa, en este momento esta en revisión, nos comunicaremos con usted muy pronto');
+  swal({
+    title: "Gracias !",
+    text: "Estamos revisando su requerimiento, en pocos minutos nos comunicaremos con usted",
+    type: "success"
+  });
+</script>
+@endif
+    @stop

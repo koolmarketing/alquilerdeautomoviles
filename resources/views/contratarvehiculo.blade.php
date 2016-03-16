@@ -1,3 +1,4 @@
+
 @extends('templates.master')
 
 @section('title')
@@ -16,20 +17,20 @@ Contacto
        ============================== -->
        <section class="header-pages nosotros">
 
-       	<!-- *****  Logo ***** -->
-       	<div class="logo-container text-center">
-       		<a href="#">
-       			<img src="{!! URL::to('/') !!}/img/logo-header.png" class="logo-banner" width="220px" alt="">
-       		</a>
-       	</div>
-       	<div id="titulo">
-       		<h1 class="title-center"> Contratar un Vehículo </h1>
-       	</div>
+        <!-- *****  Logo ***** -->
+        <div class="logo-container text-center">
+          <a href="#">
+            <img src="{!! URL::to('/') !!}/img/logo-header.png" class="logo-banner" width="220px" alt="">
+          </a>
+        </div>
+        <div id="titulo">
+          <h1 class="title-center"> Contratar un Vehículo </h1>
+        </div>
 
 
        </section> <!-- *** end Header *** -->
 
-       <div class="container">				
+       <div class="container">        
 
         <br><br>
         <div class="col-md-7  col-xs-12">
@@ -39,7 +40,7 @@ Contacto
           <!-- Nav tabs -->
           <ul class="nav nav-tabs" role="tablist">
            <li role="presentation" class="active persona_natural"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class=" icon-adult"></i> Persona Natural</a></li>
-           <li role="presentation" class="empresas"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="icon-commerical-building"></i> Empresas</a></li>		
+           <li role="presentation" class="empresas"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="icon-commerical-building"></i> Empresas</a></li>    
          </ul>
 
          <!-- Tab panes -->
@@ -68,13 +69,13 @@ Contacto
 
             <div class="col-md-6">
              <div class="form-group">
-              <div class="col-md-12"><h4 class="title-alquiler-h5"><i class="icon-calendar-empty"></i> Fecha de Contratación</h4><br></div>   								
+              <div class="col-md-12"><h4 class="title-alquiler-h5"><i class="icon-calendar-empty"></i> Fecha de Contratación</h4><br></div>                   
 
             </div>
-            <div class="col-md-6">	
+            <div class="col-md-6">  
               <input type="text" class="form-control some_class" name="inicial" value="" id="date_timepicker_start" placeholder="INICIAL" />
             </div><br>
-            <div class="col-md-6">	
+            <div class="col-md-6">  
               <input type="text" name="final" class="form-control some_class" value="" id="date_timepicker_end" placeholder="FINAL" />
             </div>
           </div>
@@ -192,13 +193,13 @@ Contacto
 
 <div class="col-md-6">
  <div class="form-group">
-   <div class="col-md-12"><h4 class="title-alquiler-h5"><i class="icon-calendar-empty"></i> Fecha de Contratación</h4><br></div>     								
+   <div class="col-md-12"><h4 class="title-alquiler-h5"><i class="icon-calendar-empty"></i> Fecha de Contratación</h4><br></div>                    
 
  </div>
- <div class="col-md-6">	
+ <div class="col-md-6"> 
   <input type="text" class="form-control some_class" name="inicial" value="" id="date_timepicker_start1" placeholder="INICIAL" />
 </div><br>
-<div class="col-md-6">	
+<div class="col-md-6">  
   <input type="text" class="form-control some_class" name="final" value="" id="date_timepicker_end1" placeholder="FINAL" />
 </div>
 </div>
@@ -327,26 +328,26 @@ Contacto
 @stop
 
 @section('add_scripts')
+{!! HTML::script('js/datetimepicker-master/build/jquery.datetimepicker.full.js') !!}
 
-<script type="text/javascript" src="js/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
 <script>
   $(document).ready(function() {
    jQuery(function(){
     jQuery('#date_timepicker_start').datetimepicker({
   //format:'Y/m/d',
   onShow:function( ct ){
-  	this.setOptions({
-  		maxDate:jQuery('#date_timepicker_end').val()?jQuery('#date_timepicker_end').val():false
-  	})
+    this.setOptions({
+      maxDate:jQuery('#date_timepicker_end').val()?jQuery('#date_timepicker_end').val():false
+    })
   },
   timepicker:true
 });
     jQuery('#date_timepicker_end').datetimepicker({
   //format:'Y/m/d',
   onShow:function( ct ){
-  	this.setOptions({
-  		minDate:jQuery('#date_timepicker_start').val()?jQuery('#date_timepicker_start').val():false
-  	})
+    this.setOptions({
+      minDate:jQuery('#date_timepicker_start').val()?jQuery('#date_timepicker_start').val():false
+    })
   },
   timepicker:true
 });
@@ -360,18 +361,18 @@ Contacto
     jQuery('#date_timepicker_start1').datetimepicker({
   //format:'Y/m/d',
   onShow:function( ct ){
-  	this.setOptions({
-  		maxDate:jQuery('#date_timepicker_end1').val()?jQuery('#date_timepicker_end1').val():false
-  	})
+    this.setOptions({
+      maxDate:jQuery('#date_timepicker_end1').val()?jQuery('#date_timepicker_end1').val():false
+    })
   },
   timepicker:true
 });
     jQuery('#date_timepicker_end1').datetimepicker({
   //format:'Y/m/d',
   onShow:function( ct ){
-  	this.setOptions({
-  		minDate:jQuery('#date_timepicker_start1').val()?jQuery('#date_timepicker_start1').val():false
-  	})
+    this.setOptions({
+      minDate:jQuery('#date_timepicker_start1').val()?jQuery('#date_timepicker_start1').val():false
+    })
   },
   timepicker:true
 });
@@ -380,24 +381,18 @@ Contacto
 </script>
 
 <script type="text/javascript">
-
   $(".persona_natural").click(function(event) {
-
    swal({   title: "<h1>Persona Natural!</h1>",   text: "<b>Si quieres alquilar un vehículo de manera personal y no por medio de una empresa debes llenar este formulario.</b>",   html: true });
  });
-
   $(".empresas").click(function(event) {
-
    swal({   title: "<h1>Empresas!</h1>",   text: "<b>Si vas a realizar un alquiler por medio de una compañía debes llenar este formulario y tener la información para  los campos adicionales que te solicitamos.</b>",   html: true });
  });
-
 </script>
 
 
 @if ($status=="enviado")
 <script>
   // alert('Su carro ha sido registrado de manera exitosa, en este momento esta en revisión, nos comunicaremos con usted muy pronto');
-
   swal({
     title: "Gracias !",
     text: "Estamos revisando su requerimiento, en pocos minutos nos comunicaremos con usted",

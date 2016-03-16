@@ -255,8 +255,10 @@ class carrosController extends Controller
 		$asunto = $datos->input('asunto');
 
 
+
+
 		$para      = 'multiserviciosenlinea2016@gmail.com';
-		$titulo    = 'Cotización de Alquiler para Persona';
+		$titulo    = 'Cotización de Alquiler de vehículo para Persona';
 		$mensaje   = '<p>Una <b>persona</b> ha enviado estos datos:</p>
 
 		<p>Vehículo: '.$datos->input("carro_seleccionado").'</p>
@@ -277,7 +279,7 @@ class carrosController extends Controller
 		'X-Mailer: PHP/' . phpversion();
 
 		mail($para, $titulo, $mensaje, $cabeceras);
-		return view('contratarvehiculo',['status'=>'enviado']);
+		return view('home',['status'=>'enviado']);
 
 	}
 
@@ -290,10 +292,10 @@ class carrosController extends Controller
 
 
 		$para      = 'multiserviciosenlinea2016@gmail.com';
-		$titulo    = 'Cotización de Alquiler para Empresa';
+		$titulo    = 'Cotización de Alquiler de vehículo para Empresa';
 		$mensaje   = '<p>Una empresa ha enviado estos datos:</p>
 
-		<p>Vehículo: '.$datos->input("carro_seleccionado").'</p>
+		<p>Vehículo: <b>'.$datos->input("carro_seleccionado").'</b></p>
 		<p>Fecha Inicial:           '.$datos->input("inicial").'</p>
 		<p>Fecha Final:             '.$datos->input("final").'</p><br>
 		<p>Empresa:                 '. $datos->input("empresa") .'</p>
@@ -312,7 +314,7 @@ class carrosController extends Controller
 		'X-Mailer: PHP/' . phpversion();
 
 		mail($para, $titulo, $mensaje, $cabeceras);
-		return view('contratarvehiculo',['status'=>'enviado']);
+		return view('home',['status'=>'enviado']);
 
 	}
 
