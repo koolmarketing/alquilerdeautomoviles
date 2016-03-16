@@ -45,9 +45,9 @@ About Us
 
           <div class="text-center m-b-md" id="wizardControl">
 
-            <a class="btn btn-primary" href="#step1" data-toggle="tab">Paso 1 - Información Personal</a>
-            <a class="btn btn-default" href="#step2" data-toggle="tab">Paso 2 - Datos del Vehículo</a>
-            <a class="btn btn-default" href="#step3" data-toggle="tab">Paso 3 - Características</a>
+            <a class="btn btn-primary" href="#step1" data-toggle="tab"><b>Paso 1</b> - Información Personal</a>
+            <a class="btn btn-default" href="#step2" data-toggle="tab"><b>Paso 2</b> - Datos del Vehículo</a>
+            <a class="btn btn-default" href="#step3" data-toggle="tab"><b>Paso 3</b> - Características</a>
             <a class="btn btn-default" href="#step4" data-toggle="tab">Requisitos</a>
 
           </div>
@@ -193,18 +193,58 @@ About Us
           </div>
 
 
-          <div class="form-group col-md-6">
+          <div class="col-md-12">
 
-            <label for="foto_1"><i class="icon-camera"></i>1. Fotografía</label>
-            <input type="file"  id="foto_1" name="foto_1" style="font-size: 12px;" requerid="requerid">
+            <div class="form-group col-md-6">
 
-            <label for="foto_2"><i class="icon-camera"></i>2. Fotografía</label>
-            <input type="file" id="foto_2" name="foto_2" style="font-size: 12px;">
+              <div class="alert alert-info">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                Fotografías de su vehículo, archivos <b>jpg, png, gif</b>
+              </div>
+              <label for="foto_1"><i class="icon-camera"></i>1. Fotografía <small>(Principal)</small></label>
+              <input type="file"  id="foto_1" name="foto_1" style="font-size: 16px;" requerid="requerid">
+<br>
+              <label for="foto_2"><i class="icon-camera"></i>2. Fotografía</label>
+              <input type="file" id="foto_2" name="foto_2" style="font-size: 16px;">
+<br>
+              <label for="foto_3"><i class="icon-camera"></i>3. Fotografía</label>
+              <input type="file" id="foto_3" name="foto_3" style="font-size: 16px;">
 
-            <label for="foto_3"><i class="icon-camera"></i>3. Fotografía</label>
-            <input type="file" id="foto_3" name="foto_3" style="font-size: 12px;">
+            </div>
+
+            <div class="form-group col-md-6">
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <b>Fotografia o escaner de sus documentos.</b>
+              </div>
+
+              <label for="soat"><i class="icon-doc"></i>1. SOAT</label>
+              <input type="file" id="soat" name="soat" style="font-size: 16px;">
+<br>
+              <label for="rodamiento"><i class="icon-doc"></i>2. Impuesto de Rodamiento</label>
+              <input type="file" id="rodamiento" name="rodamiento" style="font-size: 16px;">
+<br>
+              <label for="tecnomecanica"><i class="icon-doc"></i>3. Revición técnico mecánica</label>
+              <input type="file" id="tecnomecanica" name="tecnico_mecanica" style="font-size: 16px;">
+<br>
+              <label for="tecnomecanica"><i class="icon-doc"></i>4. Tarjeta de Propiedad</label>
+              <input type="file" id="tarjeta_propiedad" name="tarjeta_propiedad" style="font-size: 16px;">
+<br>
+              <label for="tecnomecanica"><i class="icon-doc"></i>5. Cédula de ciudadanía</label>
+              <input type="file" id="cedula_ciudadania" name="cedula_ciudadania" style="font-size: 16px;">
+<br>
+<button type="button" class="btn btn-default btn-lg"><i class="icon-eye-2"></i> Información sobre protección de sus datos</button>
+
+
+
+            </div>
+
+
+
 
           </div>
+
+          
 
 
 
@@ -748,10 +788,15 @@ Promote
     color = $('#color').prop('value');
     placa = $('#placa').prop('value');
     pasajeros = $('#pasajeros').prop('value');
-    precio_dia = $('#precio_dia').prop('value');
+
+    soat = $('#soat').prop('value');
+    rodamiento = $('#rodamiento').prop('value');
+    tecnico_mecanica = $('#tecnico_mecanica').prop('value');
+    tarjeta_propiedad = $('#tarjeta_propiedad').prop('value');
+    cedula_ciudadania = $('#cedula_ciudadania').prop('value');
 
     if (propietario=="") {
-mostraralerta("Nombre");
+      mostraralerta("Nombre");
     };
     if (email=="") {
       mostraralerta("Email");
@@ -772,24 +817,35 @@ mostraralerta("Nombre");
     if (marca=="") {
       mostraralerta("Marca");
     };
-     if (linea=="") {
+    if (linea=="") {
       mostraralerta("Línea");
     };
-      if (modelo=="") {
+    if (modelo=="") {
       mostraralerta("Modelo");
     };
-       if (color=="") {
+    if (color=="") {
       mostraralerta("Color");
     };
-      if (placa=="") {
+    if (placa=="") {
       mostraralerta("Placa");
     };
-     if (pasajeros=="") {
+    if (pasajeros=="") {
       mostraralerta("Pasajeros");
     };
-        if (precio_dia=="") {
+    if (precio_dia=="") {
       mostraralerta("Precio por día");
     };
+      if (soat=="") {
+      mostraralerta("SOAT");
+    };
+        if (rodamiento=="") {
+      mostraralerta("Impuesto de Rodamiento");
+    };
+
+           if (tecnico_mecanica=="") {
+      mostraralerta("Revisión Técnico-Mecánica");
+    };
+
 
 
 
@@ -806,6 +862,8 @@ function mostraralerta(input){
    html: true 
  });
 }
+
+
 </script>
 
 

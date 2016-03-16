@@ -29,6 +29,14 @@ class carrosController extends Controller
 		$foto_2=$request->file('foto_2');
 		$foto_3=$request->file('foto_3');
 
+		// Documentos
+
+		$soat=$request->file('soat');
+		$rodamiento=$request->file('rodamiento');
+		$tecnico_mecanica=$request->file('tecnico_mecanica');
+		$tarjeta_propiedad=$request->file('tarjeta_propiedad');
+		$cedula_ciudadania=$request->file('cedula_ciudadania');
+
 
 
 		$destinationPath = 'uploads/img/';
@@ -62,8 +70,60 @@ class carrosController extends Controller
 			$filename3 = "".str_random(12).".".$extension."";
 			$upload_success = $file->move($destinationPath, $filename3);
 
-	
 		}
+
+		if ($request->hasFile('soat')) {
+
+			$file = $request->file('soat');
+			$destinationPath = 'uploads/img';
+			$extension = $file->getClientOriginalExtension();
+			$filename4 = "".str_random(12).".".$extension."";
+			$upload_success = $file->move($destinationPath, $filename4);
+
+		}
+
+		if ($request->hasFile('rodamiento')) {
+
+			$file = $request->file('rodamiento');
+			$destinationPath = 'uploads/img';
+			$extension = $file->getClientOriginalExtension();
+			$filename5 = "".str_random(12).".".$extension."";
+			$upload_success = $file->move($destinationPath, $filename5);
+
+		}
+
+		if ($request->hasFile('tecnico_mecanica')) {
+
+			$file = $request->file('tecnico_mecanica');
+			$destinationPath = 'uploads/img';
+			$extension = $file->getClientOriginalExtension();
+			$filename6 = "".str_random(12).".".$extension."";
+			$upload_success = $file->move($destinationPath, $filename6);
+
+		}
+
+		if ($request->hasFile('tarjeta_propiedad')) {
+
+			$file = $request->file('tarjeta_propiedad');
+			$destinationPath = 'uploads/img';
+			$extension = $file->getClientOriginalExtension();
+			$filename7 = "".str_random(12).".".$extension."";
+			$upload_success = $file->move($destinationPath, $filename7);
+
+		}
+
+
+
+		if ($request->hasFile('cedula_ciudadania')) {
+
+			$file = $request->file('cedula_ciudadania');
+			$destinationPath = 'uploads/img';
+			$extension = $file->getClientOriginalExtension();
+			$filename8 = "".str_random(12).".".$extension."";
+			$upload_success = $file->move($destinationPath, $filename8);
+
+		}
+
 
 		$carro->propietario   = $request->input('propietario');
 		$carro->email         = $request->input('email');
@@ -86,6 +146,12 @@ class carrosController extends Controller
 		if (isset($filename1)) { $carro->foto_1= $filename1;}
 		if (isset($filename2)) { $carro->foto_2= $filename2;}
 		if (isset($filename3)) { $carro->foto_3= $filename3;}
+
+		if (isset($filename4)) { $carro->soat= $filename4;}
+		if (isset($filename5)) { $carro->rodamiento= $filename5;}
+		if (isset($filename6)) { $carro->tecnico_mecanica= $filename6;}
+		if (isset($filename7)) { $carro->tarjeta_propiedad= $filename7;}
+		if (isset($filename8)) { $carro->cedula_ciudadania= $filename8;}
 
 		$carro->observaciones      = $request->input('observaciones');
 		$carro->aire_acondicionado = $request->input('aire_acondicionado');
@@ -133,7 +199,7 @@ class carrosController extends Controller
 		<p><b>Modelo:</b>                      '. $request->input("modelo") .'</p> 
 		<p><h3><a type="buttom" style="pading:10px" href="http://alquilerdeautomoviles.com.co/vercarro/'.$id.'">Click aquí para ver detalles</a></h3></p>
 		<p>
-<img width="500px" src="http://alquilerdeautomoviles.com.co/uploads/img/'.$filename1.'" alt="" class="img-responsive">
+			<img width="500px" src="http://alquilerdeautomoviles.com.co/uploads/img/'.$filename1.'" alt="" class="img-responsive">
 		</p>
 
 		<p></p>
@@ -216,7 +282,7 @@ class carrosController extends Controller
 	}
 
 
-		public function cotizacionempresa(Request $datos){
+	public function cotizacionempresa(Request $datos){
 
 		
 		$data   = $datos->input();
@@ -233,7 +299,7 @@ class carrosController extends Controller
 		<p>Empresa:                 '. $datos->input("empresa") .'</p>
 		<p>NIT:                     '. $datos->input("nit") .'</p>
 		<p>Nombre de contacto:      '. $datos->input("contacto") .'</p>
-		  
+
 		<p>Email:                   '. $datos->input("email") .' </p>
 		<p>Teléfono:                '. $datos->input("telefono") .'</p>
 		<p>Celular:                 '. $datos->input("celular") .'</p>

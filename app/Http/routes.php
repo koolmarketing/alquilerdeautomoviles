@@ -5,6 +5,7 @@ Route::get('/', function () {  return view('home');  });
 Route::get('nosotros/', function () {  return view('nosotros');  });
 Route::get('servicios/', function () {  return view('servicios');  });
 Route::get('alquiler/', function () {  return view('alquiler');  });
+Route::get('terminos-y-condiciones/', function () {  return view('terminos_legales');  });
 
 Route::get('postular', function () {  return view('postular')->with('status', 'nuevo');  });
 
