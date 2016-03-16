@@ -534,7 +534,6 @@ header .active {
   height: 100%;
 }
 .carousel-inner {
-  min-height: 500px;
   height: 100%;
 }
 .fill {
@@ -551,7 +550,7 @@ header .active {
   height: 4px;
   border: none;
   border-radius: 0;
-  background: #fff;
+  background: #cdcdcd;
 }
 .carousel-indicators .active {
   width: 40px;

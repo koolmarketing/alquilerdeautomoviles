@@ -19,7 +19,7 @@ Contacto
        	<!-- *****  Logo ***** -->
        	<div class="logo-container text-center">
        		<a href="#">
-       			<img src="img/logo-header.png" class="logo-banner" width="220px" alt="">
+       			<img src="{!! URL::to('/') !!}/img/logo-header.png" class="logo-banner" width="220px" alt="">
        		</a>
        	</div>
        	<div id="titulo">
@@ -47,18 +47,21 @@ Contacto
            <div role="tabpanel" class="tab-pane active" id="home">
             <br>
             {!! Form::open(array('class'=>'contact-form','method' => 'post', 'url' => 'cotizacionpersona')) !!}
+
+            <input type="hidden" name="carro_seleccionado" value="{!! $carroseleccionado->marca !!} {!! $carroseleccionado->linea !!} {!! $carroseleccionado->modelo !!} de {!! $carroseleccionado->propietario !!}">
             <div class="row">
 
               <div class="col-md-12">
                <div class="col-md-5 item-carro-imagen">
-                {!! HTML::image('img/thum/sparkrojo.jpg','',array('class'=>'img-responsive img-thumbnail')) !!}
+                
+                <img src="{!! URL::to('/') !!}/uploads/img/{!! $carroseleccionado->foto_1 !!}" class="img-responsive img-thumbnail"alt="">
               </div>
               <div class="col-md-7 item-carro-list">
 
 
-                <h4 class="title-alquiler-h3">Chevrolet Spark GT 2014</h4>
+                <h4 class="title-alquiler-h3">{!! $carroseleccionado->marca !!} {!! $carroseleccionado->linea !!} {!! $carroseleccionado->modelo !!}</h4>
                 <span class="label label-primary">Seleccionado</span><br><br>
-                <h5 class="title-alquiler-h5"><b>110.000</b> pesos/día</h5>
+                <h5 class="title-alquiler-h5"><b>{!! $carroseleccionado->precio_dia !!}</b> pesos/día</h5>
 
               </div>
             </div>
@@ -163,20 +166,22 @@ Contacto
   <br>
   {!! Form::open(array('class'=>'contact-form','method' => 'post', 'url' => 'cotizacionempresa')) !!}
   <div class="row">
+  <input type="hidden" name="carro_seleccionado" value="{!! $carroseleccionado->marca !!} {!! $carroseleccionado->linea !!} {!! $carroseleccionado->modelo !!} de {!! $carroseleccionado->propietario !!}">
 
-    <div class="col-md-12">
-     <div class="col-md-5 item-carro-imagen">
-      {!! HTML::image('img/thum/sparkrojo.jpg','',array('class'=>'img-responsive img-thumbnail')) !!}
-    </div>
-    <div class="col-md-7 item-carro-list">
+      <div class="col-md-12">
+               <div class="col-md-5 item-carro-imagen">
+                
+                <img src="{!! URL::to('/') !!}/uploads/img/{!! $carroseleccionado->foto_1 !!}" class="img-responsive img-thumbnail"alt="">
+              </div>
+              <div class="col-md-7 item-carro-list">
 
 
-      <h4 class="title-alquiler-h3">Chevrolet Spark GT 2014</h4>
-      <span class="label label-primary">Seleccionado</span><br><br>
-      <h5 class="title-alquiler-h5"><b>110.000</b> pesos/día</h5>
+                <h4 class="title-alquiler-h3">{!! $carroseleccionado->marca !!} {!! $carroseleccionado->linea !!} {!! $carroseleccionado->modelo !!}</h4>
+                <span class="label label-primary">Seleccionado</span><br><br>
+                <h5 class="title-alquiler-h5"><b>{!! $carroseleccionado->precio_dia !!}</b> pesos/día</h5>
 
-    </div>
-  </div>
+              </div>
+            </div>
 
   <div class="col-md-12">
    <div class="form-group">
@@ -284,91 +289,29 @@ Contacto
   <h3 class="title-alquiler-h3 text-right"><i class="icon-cab"></i> Carros Disponibles</h3><br>
   <div class="container-items-disponibles">
 
-    <div class="col-md-12 item-carro-contratar">
+
+@foreach ($carros as $carro)
+
+<div class="col-md-12 item-carro-contratar">
       <div class="col-md-5 item-carro-imagen">
-        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
+        <img src="{!! URL::to('/') !!}/uploads/img/{!! $carro->foto_1 !!}" class="img-responsive img-thumbnail"alt="" width="120px">        
       </div>
       <div class="col-md-7 item-carro-list">
 
-        <span class="col-sm-12">Marca Linea Modelo</span>
-        <span class="col-sm-12 text-right">110.000</span>
-        <button class="btn btn-xs btn-primary">Seleccionar</button>
+        <span class="col-sm-12">{!! $carro->marca !!} {!! $carro->linea !!} {!! $carro->modelo !!}</span>
+        <span class="col-sm-12 text-right">{!! $carro->precio_dia !!}</span>
+        @if ($carro->id == $carroseleccionado->id)
+        <a  class="btn btn-xs btn-danger">Seleccionado</a>
+        @else
+        <a href="{!! URL::to('/') !!}/contratarvehiculo/{!! $carro->id !!}" class="btn btn-xs btn-primary">Seleccionar</a>
+        @endif
+        
       </div>
 
     </div>
 
-
-    <div class="col-md-12 item-carro-contratar">
-      <div class="col-md-5 item-carro-imagen">
-        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
-      </div>
-      <div class="col-md-7 item-carro-list">
-
-        <span class="col-sm-12">Marca Linea Modelo</span>
-        <span class="col-sm-12 text-right">110.000</span>
-        <button class="btn btn-xs btn-primary">Seleccionar</button>
-      </div>
-
-    </div>
-
-
-
-
-    <div class="col-md-12 item-carro-contratar">
-      <div class="col-md-5 item-carro-imagen">
-        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
-      </div>
-      <div class="col-md-7 item-carro-list">
-
-        <span class="col-sm-12">Marca Linea Modelo</span>
-        <span class="col-sm-12 text-right">110.000</span>
-        <button class="btn btn-xs btn-primary">Seleccionar</button>
-      </div>
-
-    </div>
-
-
-
-    <div class="col-md-12 item-carro-contratar">
-      <div class="col-md-5 item-carro-imagen">
-        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
-      </div>
-      <div class="col-md-7 item-carro-list">
-
-        <span class="col-sm-12">Marca Linea Modelo</span>
-        <span class="col-sm-12 text-right">110.000</span>
-        <button class="btn btn-xs btn-primary">Seleccionar</button>
-      </div>
-
-    </div>
-
-    <div class="col-md-12 item-carro-contratar">
-      <div class="col-md-5 item-carro-imagen">
-        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
-      </div>
-      <div class="col-md-7 item-carro-list">
-
-        <span class="col-sm-12">Marca Linea Modelo</span>
-        <span class="col-sm-12 text-right">110.000</span>
-        <button class="btn btn-xs btn-primary">Seleccionar</button>
-      </div>
-
-    </div>
-
-    <div class="col-md-12 item-carro-contratar">
-      <div class="col-md-5 item-carro-imagen">
-        {!! HTML::image('img/thum/hyundai_i10.jpg','',array('class'=>'img-responsive img-thumbnail','width'=>'120px')) !!}
-      </div>
-      <div class="col-md-7 item-carro-list">
-
-        <span class="col-sm-12">Marca Linea Modelo</span>
-        <span class="col-sm-12 text-right">110.000</span>
-        <button class="btn btn-xs btn-primary">Seleccionar</button>
-      </div>
-
-    </div>
-
-
+@endforeach
+    
 
   </div>
 </div>

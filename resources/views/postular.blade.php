@@ -628,6 +628,8 @@ About Us
                             <p>6. Fichas de mantenimiento periódicos (frenos, aceite, …) </p>
                             <p>7. Formulario diligenciado una vez aprobado la inscripción </p>
 
+                            <p> (<a href="{!! URL::to('terminos-y-condiciones') !!}" target="_blank">Leer Terminos y condiciones</a>) </p>
+
                             <div class="form-group col-md-12">
                               <div class="checkbox">
                                <input type="checkbox" class="styled" id="singleCheckbox1" value="option1" aria-label="Single checkbox One" required="requerid">

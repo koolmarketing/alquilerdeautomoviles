@@ -259,7 +259,7 @@ class carrosController extends Controller
 		$titulo    = 'Cotización de Alquiler';
 		$mensaje   = '<p>Una persona ha enviado estos datos:</p>
 
-		<p>Vehículo: Nombre del vehículo</p>
+		<p>Vehículo: '.$datos->input("carro_seleccionado").'</p>
 		<p>Fecha Inicial:          '.$datos->input("inicial").'</p>
 		<p>Fecha Final:          '.$datos->input("final").'</p>
 		<p>Nombre:                 '. $datos->input("nombre") .'</p>
@@ -293,7 +293,7 @@ class carrosController extends Controller
 		$titulo    = 'Cotización de Alquiler';
 		$mensaje   = '<p>Una empresa ha enviado estos datos:</p>
 
-		<p>Vehículo: Nombre del vehículo</p>
+		<p>Vehículo: '.$datos->input("carro_seleccionado").'</p>
 		<p>Fecha Inicial:           '.$datos->input("inicial").'</p>
 		<p>Fecha Final:             '.$datos->input("final").'</p><br>
 		<p>Empresa:                 '. $datos->input("empresa") .'</p>
@@ -313,6 +313,28 @@ class carrosController extends Controller
 
 		mail($para, $titulo, $mensaje, $cabeceras);
 		return view('contratarvehiculo',['status'=>'enviado']);
+
+	}
+
+	public function alquiler(){
+		$carros=DB::select('select * from carros where activo = 1');
+
+		return view('alquiler',['carros'=>$carros]);
+	}
+
+
+	public function carro($id){
+		$carro = App\Carros::find($id);
+
+		return view('carro')->with('carro',$carro);
+	}
+
+	public function AlquilarVehiculo($id){
+		$carroseleccionado = App\Carros::find($id);
+		$carros=DB::select('select * from carros where activo = 1');
+
+		return view('contratarvehiculo',['carros'=>$carros,'carroseleccionado'=>$carroseleccionado,'status'=>'nuevo']);
+
 
 	}
 

@@ -5,17 +5,61 @@
 <div class="container">
 	<div class="col-md-12 ">
 
-	<div class="alert alert-info">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	
 		 <h1>{!! $carro->marca !!} {!! $carro->linea !!} <small> de <b>{!! $carro->propietario !!}</b></small></h1>
-	</div>
-		<br><br>
+			<br><br>
 
 
 		<div class="col-md-5">
-			<img src="{!! URL::to ('uploads/img/')!!}/{!! $carro->foto_1 !!}" alt="" class="img-responsive">
+
+
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+
+      <img src="{!! URL::to('/') !!}/uploads/img/{!! $carro->foto_1 !!}" width="341" height="341" alt="...">
+      
+    </div>
+    @if (isset($carro->foto_2))
+    <div class="item">
+      <img src="{!! URL::to('/') !!}/uploads/img/{!! $carro->foto_2 !!}" alt="...">  
+    </div>
+    @endif
+
+       @if (isset($carro->foto_3))
+    <div class="item">
+      <img src="{!! URL::to('/') !!}/uploads/img/{!! $carro->foto_3 !!}" alt="...">  
+    </div>
+    @endif
+    
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+
+		{{-- 	<img src="{!! URL::to ('uploads/img/')!!}/{!! $carro->foto_1 !!}" alt="" class="img-responsive"> --}}
 			<br><br>
-<a href="#" type="button" class="btn btn-primary">Más Imagenes</a>
+
 <a href="{!! URL::to('editarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-warning">Editar</a>
 <a href="{!! URL::to('eliminarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-success">Eliminar</a>
 @if ($carro->activo =="0")
@@ -24,6 +68,17 @@
 						@else
 						<a href="{!! URL::to('desactivarcarro') !!}/{!! $carro->id !!}" type="button" class="btn btn-danger">Desactivar Carro</a>
 						@endif
+
+
+						<p>
+
+						<ul class="list-group">
+							<li class="list-group-item">SOAT <a target="blank" href="{!! URL::to('/') !!}/uploads/img/{!! $carro->soat !!}" class="pull-right btn btn-xs btn-default">Ver</a>  </li>
+							<li class="list-group-item">Impuesto de Rodamiento <a target="blank" href="{!! URL::to('/') !!}/uploads/img/{!! $carro->rodamiento !!}" class="pull-right btn btn-xs btn-default">Ver</a></li>
+							<li class="list-group-item">Revición técnico mecánica<a target="blank" href="{!! URL::to('/') !!}/uploads/img/{!! $carro->tecnico_mecanica !!}" class="pull-right btn btn-xs btn-default">Ver</a></li>
+							<li class="list-group-item">Tarjeta de Propiedad <a target="blank" href="{!! URL::to('/') !!}/uploads/img/{!! $carro->tarjeta_propiedad !!}" class="pull-right btn btn-xs btn-default">Ver</a></li>
+							<li class="list-group-item">Cédula de ciudadanía <a target="blank" href="{!! URL::to('/') !!}/uploads/img/{!! $carro->cedula_ciudadania !!}" class="pull-right btn btn-xs btn-default">Ver</a></li>
+						</ul>
 						
 		</div>
 
@@ -60,23 +115,23 @@
 
 		<div class="col-md-3">
 			<a href='#' class='list-group-item'>Aire acondicionado
-			<span class='pull-right'>
-				@if ($carro->aire_aconcionado=="1")
-				<i class='icon-check'></i>
-				@else
-				<i class='icon-thumbs-down-1'></i>
-				@endif			 
-			</span>
-		</a>  
-		<a href='#' class='list-group-item'>Frenos ABS
-			<span class='pull-right'>
-				@if ($carro->frenos_abs=="1")
-				<i class='icon-check'></i>
-				@else
-				<i class='icon-thumbs-down-1'></i>
-				@endif
+          <span class='pull-right'>
+            @if ($carro->aire_acondicionado=="1")
+            <i class='icon-check'></i>
+            @else
+            <i class='icon-thumbs-down-1'></i>
+            @endif       
+          </span>
+        </a>  
+        <a href='#' class='list-group-item'>Frenos ABS
+          <span class='pull-right'>
+            @if ($carro->freno_abs=="1")
+            <i class='icon-check'></i>
+            @else
+            <i class='icon-thumbs-down-1'></i>
+            @endif
 
-			</span></a>
+          </span></a>
 
 			<a href='#' class='list-group-item'>4x4
 				<span class='pull-right'>
@@ -168,6 +223,55 @@
 							@endif
 
 						</span></a>
+						<a href='#' class='list-group-item'>Vidrios Eléctricos
+                              <span class='pull-right'>
+                                @if ($carro->vidrios_electricos=="1")
+                                <i class='icon-check'></i>
+                                @else
+                                <i class='icon-thumbs-down-1'></i>
+                                @endif
+
+                              </span></a>
+
+                              <a href='#' class='list-group-item'>Rastreador Satelital
+                                <span class='pull-right'>
+                                  @if ($carro->rastreador=="1")
+                                  <i class='icon-check'></i>
+                                  @else
+                                  <i class='icon-thumbs-down-1'></i>
+                                  @endif
+
+                                </span></a>
+
+                                <a href='#' class='list-group-item'>Rines de Lujo
+                                  <span class='pull-right'>
+                                    @if ($carro->rines_lujo=="1")
+                                    <i class='icon-check'></i>
+                                    @else
+                                    <i class='icon-thumbs-down-1'></i>
+                                    @endif
+
+                                  </span></a>
+
+                                  <a href='#' class='list-group-item'>DVD
+                                    <span class='pull-right'>
+                                      @if ($carro->dvd=="1")
+                                      <i class='icon-check'></i>
+                                      @else
+                                      <i class='icon-thumbs-down-1'></i>
+                                      @endif
+
+                                    </span></a>
+
+                                    <a href='#' class='list-group-item'>Full Equipo
+                                      <span class='pull-right'>
+                                        @if ($carro->full_equipo=="1")
+                                        <i class='icon-check'></i>
+                                        @else
+                                        <i class='icon-thumbs-down-1'></i>
+                                        @endif
+
+                                      </span></a>
 
 
 						      

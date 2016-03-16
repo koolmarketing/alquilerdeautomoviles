@@ -85,10 +85,10 @@
                 </li>
                 
                 <li class="pull-right"> 
-                  <img src="img/tarjetas.png" height="20" >
+                  <img src="{!! URL::to('/')!!}/img/tarjetas.png" height="20" >
                 </li>  
                 <li class="pull-right"> 
-                  <img src="img/logoklob.jpg" height="20" >
+                  <img src="{!! URL::to('/')!!}/img/logoklob.jpg" height="20" >
                 </li>
               </ul>
             </div>
@@ -108,7 +108,7 @@
                 </button>
 
                 <a href="{!!URL::to('/')!!}" class="navbar-brand">
-                  <img class="img-responsive" src="img/logo.jpg" alt="Logo">
+                  <img class="img-responsive" src="{!! URL::to('/')!!}/img/logo.jpg" alt="Logo">
                 </a>
 
               </div>
@@ -139,10 +139,11 @@
                 <li class="linkedin hvr-pulse"><a href="#"><i class="fa fa-linkedin"></i></a></li>
               </ul>
               <p class="copyright"><p>
-                <img src="img/NR.png" width="300px">
+                <img src="{!! URL::to('/')!!}/img/NR.png" width="300px">
               </p>
               
-              &copy; Copyright 2016 alquilerdeautomoviles.com.co- Todos los derechos reservados.- Desarrollado por <a href="http://koolmarketing.net" target="_blank">Koolmarketing</a>
+              &copy; Copyright 2016 alquilerdeautomoviles.com.co- Todos los derechos reservados.- Desarrollado por <a href="http://koolmarketing.net" target="_blank">Koolmarketing</a><br>
+              <a href="{!! URL::to('/') !!}/terminos-y-condiciones">Terminos y Condiciones de Uso</a>
             </p>
           </div>
         </div>

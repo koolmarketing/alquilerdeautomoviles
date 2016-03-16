@@ -4,7 +4,12 @@
 Route::get('/', function () {  return view('home');  });
 Route::get('nosotros/', function () {  return view('nosotros');  });
 Route::get('servicios/', function () {  return view('servicios');  });
-Route::get('alquiler/', function () {  return view('alquiler');  });
+Route::get('alquiler','carrosController@alquiler');
+Route::get('carro/{id}','carrosController@carro');
+Route::get('contratarvehiculo/{id}','carrosController@AlquilarVehiculo');
+
+
+
 Route::get('terminos-y-condiciones/', function () {  return view('terminos_legales');  });
 
 Route::get('postular', function () {  return view('postular')->with('status', 'nuevo');  });
@@ -18,7 +23,7 @@ Route::get('carro/', function () {  return view('carro');  });
 
 Route::get('contacto/', function () {  return view('contacto')->with('status', 'nuevo');  });
 
-Route::get('contratarvehiculo/',function () {  return view('contratarvehiculo')->with('status', 'nuevo');  });
+// Route::get('contratarvehiculo/',function () {  return view('contratarvehiculo')->with('status', 'nuevo');  });
 
 Route::get('servicioscomplementarios/', function () {  return view('servicioscomplementarios');  });
 

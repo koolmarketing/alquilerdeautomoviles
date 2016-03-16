@@ -39,9 +39,9 @@
        		<div class="filters">
        			<ul class="wow lightSpeedIn">
        				<li><a href="#" data-filter="*" class="active"><i class="icon-grid"></i></a></li>
-       				<li><a href="#" data-filter=".automovil">Autos</a></li>
-       				<li><a href="#" data-filter=".camioneta">Camionetas</a></li>
-       				<li><a href="#" data-filter=".campero">Camperos</a></li>
+       				<li><a href="#" data-filter=".Sedan">Autos</a></li>
+       				<li><a href="#" data-filter=".Camioneta">Camionetas</a></li>
+       				<li><a href="#" data-filter=".Campero">Camperos</a></li>
        				<li><a href="#" data-filter=".minivan">minivan</a></li>
        				<li><a href="#" data-filter=".buse_buseta">Buses y busetas</a></li>              
        			</ul>
@@ -54,144 +54,27 @@
             <!-- =========================
                Portfolio item
                ============================== -->
-               <div class="portfolio-item automovil">
-               	<div class="portfolio">
-               		<a href="carro" data-lightbox-gallery="portfolio">
-               			<img src="img/carros/spark-rojo.jpg" alt="Portfolio 1"/><!-- END PORTFOLIO IMAGE -->
-               			<div class="portfolio-overlay hvr-rectangle-out">
-               				<h2 class="margin-bottom-small">
-               					Chevrolet 
-               					<strong class="white-color bold-text">Spark</strong>
-               				</h2>
-               				<div class="button">Ver Carro</div>
-               			</div><!-- END PORTFOLIO OVERLAY -->
-               		</a>
-               	</div>
+
+               @foreach ($carros as $carro)
+
+                <div class="portfolio-item {!! $carro->carroceria !!}">
+                <div class="portfolio">
+                  <a href="{!! URL::to('/') !!}/carro/{!! $carro->id !!}" data-lightbox-gallery="portfolio">
+                    <img src="{!! URL::to('/') !!}/uploads/img/{!! $carro->foto_1 !!}" alt="Portfolio 1"/><!-- END PORTFOLIO IMAGE -->
+                    <div class="portfolio-overlay hvr-rectangle-out">
+                      <h2 class="margin-bottom-small">
+                       {!! $carro->marca !!}
+                        <strong class="white-color bold-text">{!! $carro->linea !!}</strong>
+                      </h2>
+                      
+                    </div><!-- END PORTFOLIO OVERLAY -->
+                  </a>
+                </div>
                </div> <!-- *** end portfolio-item *** -->
 
-            <!-- =========================
-               Portfolio item
-               ============================== -->
-               <div class="portfolio-item automovil">
-               	<div class="portfolio">
-               		<a href="carro" data-lightbox-gallery="portfolio">
-               			<img src="img/carros/hyundai-i10.jpg" alt="Portfolio 1"/><!-- END PORTFOLIO IMAGE -->
-               			<div class="portfolio-overlay hvr-rectangle-out">
-               				<h2 class="margin-bottom-small">
-               					hyundai
-               					<strong class="white-color bold-text">I10</strong>
-               				</h2>
-               				<div class="button">Ver Carro</div>
-               			</div><!-- END PORTFOLIO OVERLAY -->
-               		</a>
-               	</div>
-               </div> <!-- *** end portfolio-item *** -->
+               @endforeach
 
 
-                        <!-- =========================
-               Portfolio item
-               ============================== -->
-               <div class="portfolio-item camioneta">
-               	<div class="portfolio">
-               		<a href="carro" data-lightbox-gallery="portfolio">
-               			<img src="img/carros/mazda-cx9.jpg" alt="Portfolio 1"/><!-- END PORTFOLIO IMAGE -->
-               			<div class="portfolio-overlay hvr-rectangle-out">
-               				<h2 class="margin-bottom-small">
-               					Mazda
-               					<strong class="white-color bold-text">CX9</strong>
-               				</h2>
-               				<div class="button">Ver Carro</div>
-               			</div><!-- END PORTFOLIO OVERLAY -->
-               		</a>
-               	</div>
-               </div> <!-- *** end portfolio-item *** -->
-
-
-                                      <!-- =========================
-               Portfolio item
-               ============================== -->
-               <div class="portfolio-item campero">
-               	<div class="portfolio">
-               		<a href="carro" data-lightbox-gallery="portfolio">
-               			<img src="img/carros/toyota-fj.jpg" alt="Portfolio 1"/><!-- END PORTFOLIO IMAGE -->
-               			<div class="portfolio-overlay hvr-rectangle-out">
-               				<h2 class="margin-bottom-small">
-               					Toyota
-               					<strong class="white-color bold-text">FJ</strong>
-               				</h2>
-               				<div class="button">Ver Carro</div>
-               			</div><!-- END PORTFOLIO OVERLAY -->
-               		</a>
-               	</div>
-               </div> <!-- *** end portfolio-item *** -->
-
-
-                                                    <!-- =========================
-               Portfolio item
-               ============================== -->
-               <div class="portfolio-item automovil">
-               	<div class="portfolio">
-               		<a href="carro" data-lightbox-gallery="portfolio">
-               			<img src="img/carros/mazda-2.jpg" alt="Portfolio 1"/><!-- END PORTFOLIO IMAGE -->
-               			<div class="portfolio-overlay hvr-rectangle-out">
-               				<h2 class="margin-bottom-small">
-               					Mazda
-               					<strong class="white-color bold-text">2</strong>
-               				</h2>
-               				<div class="button">Ver Carro</div>
-               			</div><!-- END PORTFOLIO OVERLAY -->
-               		</a>
-               	</div>
-               </div> <!-- *** end portfolio-item *** -->
-
-            <!--  Portfolio item
-            ============================== -->
-            <div class="portfolio-item automovil">
-            	<div class="portfolio">
-            		<a href="carro" data-lightbox-gallery="portfolio">
-            			<img src="img/carros/Kia-Rio-2016.jpg" alt="Portfolio 1"/><!-- END PORTFOLIO IMAGE -->
-            			<div class="portfolio-overlay hvr-rectangle-out">
-            				<h2 class="margin-bottom-small">
-            					Kia
-            					<strong class="white-color bold-text">Rio 2016</strong>
-            				</h2>
-            				<div class="button">Ver Carro</div>
-            			</div><!-- END PORTFOLIO OVERLAY -->
-            		</a>
-            	</div>
-            </div> <!-- *** end portfolio-item *** -->
-
-
-             <!--  Portfolio item
-             ============================== -->
-             <div class="portfolio-item minivan">
-             	<div class="portfolio">
-             		<a href="carro" data-lightbox-gallery="portfolio">
-             			<img src="img/carros/chevrolet-minivan.jpg" alt="Portfolio 1"/><!-- END PORTFOLIO IMAGE -->
-             			<div class="portfolio-overlay hvr-rectangle-out">
-             				<h2 class="margin-bottom-small">
-             					Chevrolet
-             					<strong class="white-color bold-text">Minivan</strong>
-             				</h2>
-             				<div class="button">Ver Carro</div>
-             			</div><!-- END PORTFOLIO OVERLAY -->
-             		</a>
-             	</div>
-             </div> 
-             <div class="portfolio-item automovil">
-             	<div class="portfolio">
-             		<a href="carro" data-lightbox-gallery="portfolio">
-             			<img src="img/carros/renault-logan.jpg" alt="Portfolio 1"/><!-- END PORTFOLIO IMAGE -->
-             			<div class="portfolio-overlay hvr-rectangle-out">
-             				<h2 class="margin-bottom-small">
-             					Renault
-             					<strong class="white-color bold-text">Logan</strong>
-             				</h2>
-             				<div class="button">Ver Carro</div>
-             			</div><!-- END PORTFOLIO OVERLAY -->
-             		</a>
-             	</div>
-             </div> <!-- *** end portfolio-item *** -->
 
 
 
