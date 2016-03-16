@@ -305,6 +305,7 @@ Contacto
         @else
         <a href="{!! URL::to('/') !!}/contratarvehiculo/{!! $carro->id !!}" class="btn btn-xs btn-primary">Seleccionar</a>
         @endif
+        <a href="{!! URL::to('/') !!}/carro/{!! $carro->id !!}" class="btn btn-xs btn-success"><i class="icon-info-2"></i></a>
         
       </div>
 

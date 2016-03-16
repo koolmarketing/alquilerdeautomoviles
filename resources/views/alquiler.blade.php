@@ -54,6 +54,13 @@
             <!-- =========================
                Portfolio item
                ============================== -->
+@if (empty($carros))
+
+<div class="alert alert-warning">
+ <h2>No se encontraron resultados</h2>
+</div>
+@endif
+
 
                @foreach ($carros as $carro)
 

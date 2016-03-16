@@ -42,7 +42,7 @@ Carro
               <div class="item active">
 
                 <img src="{!! URL::to('/') !!}/uploads/img/{!! $carro->foto_1 !!}"  alt="...">
-                
+
               </div>
               @if (isset($carro->foto_2))
               <div class="item">
@@ -55,7 +55,7 @@ Carro
                 <img src="{!! URL::to('/') !!}/uploads/img/{!! $carro->foto_3 !!}" alt="...">  
               </div>
               @endif
-              
+
             </div>
 
             <!-- Controls -->
@@ -103,7 +103,8 @@ Carro
       <div class="collapse" id="collapseExample">
 
         <br><br>
-        <div class='list-group list-pop col-md-7'><a href='#' class='list-group-item'><b>Marca:</b> <span class='pull-right'>{!! $carro->marca !!}</span> </a><a href='#' class='list-group-item'><b>Linea:</b> <span class='pull-right'>{!! $carro->linea !!}</span> </a><a href='#' class='list-group-item'><b>Modelo:</b><span class='pull-right'>{!! $carro->modelo !!}</span></a><a href='#' class='list-group-item'><b>Color:</b><span class='pull-right'>{!! $carro->color !!}</span></a> <a href='#' class='list-group-item'><b>Transmisión:</b><span class='pull-right'>{!! $carro->transmision !!}</span></a> <a href='#' class='list-group-item'><b>Combustible:</b><span class='pull-right'>{!! $carro->combustible !!}</span></a><a href='#' class='list-group-item'><b>Pasajeros:</b><span class='pull-right'>{!! $carro->pasajeros !!}</span></a> <a href='#' class='list-group-item'><b>Precio por día:</b><span class='pull-right'>{!! $carro->precio_dia !!}</span></a></div>
+        <div class='list-group list-pop col-md-7'><a href='#' class='list-group-item'><b>Marca:</b> <span class='pull-right'>{!! $carro->marca !!}</span> </a><a href='#' class='list-group-item'><b>Linea:</b> <span class='pull-right'>{!! $carro->linea !!}</span> </a><a href='#' class='list-group-item'><b>Modelo:</b><span class='pull-right'>{!! $carro->modelo !!}</span></a><a href='#' class='list-group-item'><b>Color:</b><span class='pull-right'>{!! $carro->color !!}</span></a>
+        <a href='#' class='list-group-item'><b>Carrocería:</b><span class='pull-right'>{!! $carro->carroceria !!}</span></a> <a href='#' class='list-group-item'><b>Transmisión:</b><span class='pull-right'>{!! $carro->transmision !!}</span></a> <a href='#' class='list-group-item'><b>Combustible:</b><span class='pull-right'>{!! $carro->combustible !!}</span></a><a href='#' class='list-group-item'><b>Pasajeros:</b><span class='pull-right'>{!! $carro->pasajeros !!}</span></a> <a href='#' class='list-group-item'><b>Precio por día:</b><span class='pull-right'>{!! $carro->precio_dia !!}</span></a></div>
 
 
 

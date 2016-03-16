@@ -187,8 +187,8 @@ class carrosController extends Controller
 
 
 		$para      = 'multiserviciosenlinea2016@gmail.com';
-		$titulo    = 'Postulación de vehículo';
-		$mensaje   = '<p>Una persona ha postulado su vehículo</p>
+		$titulo    = 'Postulación de Vehículo';
+		$mensaje   = '<h3>Una persona ha postulado su vehículo</h3>
 
 		<p><b>Propietario: </b>                '. $request->input("propietario") .'</p>	  
 		<p><b>Email:</b>                       '. $request->input("email") .' </p>
@@ -226,7 +226,7 @@ class carrosController extends Controller
 
 
 		$para      = 'multiserviciosenlinea2016@gmail.com';
-		$titulo    = 'Servicio al Cliente: '.$asunto;
+		$titulo    = 'Servicio al Cliente - alquilerdeautomoviles: '.$asunto;
 		$mensaje   = '<p>Una persona ha enviado estos datos:</p>
 
 
@@ -256,8 +256,8 @@ class carrosController extends Controller
 
 
 		$para      = 'multiserviciosenlinea2016@gmail.com';
-		$titulo    = 'Cotización de Alquiler';
-		$mensaje   = '<p>Una persona ha enviado estos datos:</p>
+		$titulo    = 'Cotización de Alquiler para Persona';
+		$mensaje   = '<p>Una <b>persona</b> ha enviado estos datos:</p>
 
 		<p>Vehículo: '.$datos->input("carro_seleccionado").'</p>
 		<p>Fecha Inicial:          '.$datos->input("inicial").'</p>
@@ -290,7 +290,7 @@ class carrosController extends Controller
 
 
 		$para      = 'multiserviciosenlinea2016@gmail.com';
-		$titulo    = 'Cotización de Alquiler';
+		$titulo    = 'Cotización de Alquiler para Empresa';
 		$mensaje   = '<p>Una empresa ha enviado estos datos:</p>
 
 		<p>Vehículo: '.$datos->input("carro_seleccionado").'</p>
@@ -335,6 +335,16 @@ class carrosController extends Controller
 
 		return view('contratarvehiculo',['carros'=>$carros,'carroseleccionado'=>$carroseleccionado,'status'=>'nuevo']);
 
+
+	}
+	public function buscarCarro(Request $datos){
+
+		$carroceria =  $datos->input('carroceria');
+		$transmision =  $datos->input('transmision');
+		$sql='select * from carros where activo = 1 and carroceria="'.$carroceria.'" and transmision="'.$transmision.'" ';
+		$carros=DB::select($sql);
+
+		return view('alquiler',['carros'=>$carros]);
 
 	}
 

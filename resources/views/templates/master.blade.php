@@ -120,6 +120,7 @@
                   <li>{!! link_to('servicios/','Servicios') !!} </li>
                   <li>{!! link_to('postular/','Postular') !!} </li>
                   <li>{!! link_to('contacto/','Contacto') !!} </li>
+                  <li> <a data-toggle="modal" href='#modal-id'><i class="icon-search"></i> Bucar</a> </li>
                 </ul>
               </div>            
             </div>          
@@ -151,6 +152,54 @@
     </footer> 
 
 
+<div class="modal fade" id="modal-id">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title title-cam-h3">Busqueda de Vehículos</h4>
+      </div>
+      <div class="modal-body">
+   {!! Form::open(array('class'=>'contact-form','method' => 'post', 'url' => 'buscarcarro')) !!}
+  <div class="form-group col-md-6">
+            <label for="exampleInputEmail1"><i class="icon-key-1"></i> Carrocería</label>
+
+            <select class="form-control" name="carroceria" id="carroceria">
+              <option value="Sedan">Sedan</option>
+              <option value="Coupe">Coupe</option>
+              <option value="Convertible">Convertible</option>
+              <option value="Hybrido">Hybrido</option>
+              <option value="Hatchback">Hatchback</option>        
+              <option value="Wagon">Wagon</option>
+              <option value="Campero">Campero</option>
+              <option value="4x4">4x4</option>
+              <option value="Camioneta">Camioneta</option>
+              <option value="Blindado">Blindado</option>
+              <option value="Pickup">Pickup</option>
+              <option value="Tuning">Tuning</option>
+              <option value="Minivan">Minivan</option>
+              <option value="Van">Van</option>
+
+            </select>
+          </div>
+
+              <div class="form-group col-md-6">
+                <label for="exampleInputEmail1"><i class="icon-cog-1"></i>Transmisión</label>
+
+                <select class="form-control" name="transmision" id="transmision">
+                 <option value="Manual">Manual</option>
+                 <option value="Automatica">Automatica</option>
+                 <option value="Tiptronic">Tiptronic</option>
+                 <option value="CVT">CVT</option>
+               </select>
+             </div>
+  <button type="submit" class="btn btn-primary"><i class="icon-search-2"></i> Buscar vehículo</button>
+{!! Form::close() !!}
+      </div>
+ 
+    </div>
+  </div>
+</div>
  
     {!! HTML::script("js/jquery.min.js") !!}
    

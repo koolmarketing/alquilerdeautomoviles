@@ -633,7 +633,7 @@ About Us
                             <div class="form-group col-md-12">
                               <div class="checkbox">
                                <input type="checkbox" class="styled" id="singleCheckbox1" value="option1" aria-label="Single checkbox One" required="requerid">
-                               <label class="aceptar_terminos"><b>Cumplo a cabalidad con los requisitos</b></label>
+                               <label class="aceptar_terminos"><b>Cumplo a cabalidad con los requisitos  <a href="{!! URL::to('terminos-y-condiciones') !!}" target="_blank">y he leido los terminos y condiciones</a></b></label>
                              </div>
                            </div>
 

@@ -33,6 +33,8 @@ Route::post('cotizacionpersona', ['uses' => 'carrosController@cotizacionpersona'
 
 Route::post('cotizacionempresa', ['uses' => 'carrosController@cotizacionempresa', 'as' => 'cotizacionempresa']);
 
+Route::post('buscarcarro', ['uses' => 'carrosController@buscarCarro', 'as' => 'busqueda']);
+
 
 
 
